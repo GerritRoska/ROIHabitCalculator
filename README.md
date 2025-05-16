@@ -1,34 +1,38 @@
 # 💰 ROI Habit Calculator
 
-The **ROI Habit Calculator** is a modern web application designed to help users analyze and calculate investment growth by identifying and addressing weaknesses in spending. By inputting parameters like initial investment, monthly contributions, interest rates, and time horizon, users can explore how redirecting spending habits into consistent investments can lead to significant long-term growth.
+**Ever wonder how much your daily habits are costing you in long-term wealth?**  
+The ROI Habit Calculator helps you visualize how small spending shifts — like skipping takeout or canceling unused subscriptions — can compound into thousands over time.
 
-This project was built using **React**, **TypeScript**, **Vite**, and **TailwindCSS**, with the assistance of AI tools like **Claude**, **ChatGPT**, and **Tempo Labs** to streamline the development process.
+By entering your habit costs, investment return rate, and time horizon, you'll get real-time projections of how your saved money could grow if invested instead.
 
 ---
 
 ## 🚀 Features
-- Real-time investment growth projections based on custom inputs.
-- Interactive form for analyzing weaknesses in spending habits.
-- Responsive and clean user interface.
-- Built with modern technologies for speed and lightweight performance.
+
+- Real-time investment growth projections from habit savings
+- Interactive, beginner-friendly form inputs
+- Clean, responsive design built with TailwindCSS
+- Fast performance with Vite + TypeScript
 
 ---
 
 ## 🛠️ Tech Stack
-- **React** with **TypeScript** for the frontend.
-- **Vite** for fast development and builds.
-- **TailwindCSS** for styling.
-- **ESLint** for maintaining clean code standards.
+
+- **Frontend**: React + TypeScript  
+- **Build Tool**: Vite  
+- **Styling**: TailwindCSS  
+- **Linting**: ESLint
 
 ---
 
 ## 📦 Getting Started
-To run this project locally, follow these steps:
 
 ### 1. Clone the Repository
+
 ```bash
-https://github.com/GerritRoska/ROIHabitCalculator.git
+git clone https://github.com/GerritRoska/ROIHabitCalculator.git
 cd ROIHabitCalculator
+
 ```
 ### 2. Install Dependencies  
 ```bash
