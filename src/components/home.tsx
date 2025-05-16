@@ -42,9 +42,12 @@ const Home = () => {
 
       <main className="max-w-7xl mx-auto pt-16">
         <div className="flex flex-col items-center gap-4 mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
-            Habit ROI Calculator
-          </h1>
+          <div className="flex flex-col items-center gap-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
+              Habit ROI Calculator
+            </h1>
+            <ReferralButton />
+          </div>
           <a
             href="https://acorns.com/share/?shareable_code=QM3PVD3&first_name=Gerrit"
             target="_blank"

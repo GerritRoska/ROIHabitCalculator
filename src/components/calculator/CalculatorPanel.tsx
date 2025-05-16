@@ -306,7 +306,7 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({
 
   return (
     <Card
-      className={`bg-gradient-to-br from-white to-slate-50/30 p-3 sm:p-5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 mx-auto max-w-full border-0 will-change-transform ${className}`}
+      className={`bg-gradient-to-br from-background to-accent/5 dark:from-background dark:to-accent/10 p-3 sm:p-5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 mx-auto max-w-full border-0 will-change-transform ${className}`}
     >
       <CardContent className="p-0">
         <div className="flex flex-col space-y-3 sm:space-y-4">
