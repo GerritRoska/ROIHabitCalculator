@@ -1,30 +1,57 @@
-# React + TypeScript + Vite
+# 💰 ROI Habit Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The **ROI Habit Calculator** is a modern web application designed to help users analyze and calculate investment growth by identifying and addressing weaknesses in spending. By inputting parameters like initial investment, monthly contributions, interest rates, and time horizon, users can explore how redirecting spending habits into consistent investments can lead to significant long-term growth.
 
-Currently, two official plugins are available:
+This project was built using **React**, **TypeScript**, **Vite**, and **TailwindCSS**, with the assistance of AI tools like **Claude**, **ChatGPT**, and **Tempo Labs** to streamline the development process.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
+- Real-time investment growth projections based on custom inputs.
+- Interactive form for analyzing weaknesses in spending habits.
+- Responsive and clean user interface.
+- Built with modern technologies for speed and lightweight performance.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## 🛠️ Tech Stack
+- **React** with **TypeScript** for the frontend.
+- **Vite** for fast development and builds.
+- **TailwindCSS** for styling.
+- **ESLint** for maintaining clean code standards.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+---
+
+## 📦 Getting Started
+To run this project locally, follow these steps:
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/GerritRoska/weaknessinvestmentcalculator.git
+cd weaknessinvestmentcalculator
 ```
+### 2. Install Dependencies  
+```bash
+npm install
+```
+Make sure you have Node.js installed (v18+ recommended).
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### 3. Start the Development Server
+```bash
+npm run build
+```
+This will start the app in development mode. Open http://localhost:5173 in your browser to view it.
+
+### 📁 Project Structure
+- src/ – Contains the main application code.
+- index.html – The HTML entry point for the app.
+- vite.config.ts – Vite configuration file.
+- tailwind.config.js – TailwindCSS configuration file.
+
+### 🤖 Built with AI Assistance
+This project was developed with the support of AI tools, including:
+
+Claude: For brainstorming and refining ideas.
+ChatGPT: For code suggestions, debugging, and technical guidance.
+Tempo Labs: For optimizing workflows and ensuring code quality.
+AI tools played a key role in improving efficiency and speeding up the development process.
