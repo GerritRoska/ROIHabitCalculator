@@ -42,9 +42,9 @@ Make sure you have Node.js installed (v18+ recommended).
 
 ### 3. Start the Development Server
 ```bash
-npm run build
+npm run dev
 ```
-This will start the app in development mode. Open http://localhost:5173 in your browser to view it.
+Then visit http://localhost:5173 in your browser.
 
 ### 📁 Project Structure
 - src/ – Contains the main application code.
@@ -53,9 +53,9 @@ This will start the app in development mode. Open http://localhost:5173 in your 
 - tailwind.config.js – TailwindCSS configuration file.
 
 ### 🤖 Built with AI Assistance
-This project was developed with the support of AI tools, including:
+This project was accelerated with the help of AI tools:
+- Claude – For concept validation and planning
+- ChatGPT – For code refactoring, debugging, and UX flow suggestions
+- Tempo Labs – For workflow optimization and UI feedback
 
-Claude: For brainstorming and refining ideas.
-ChatGPT: For code suggestions, debugging, and technical guidance.
-Tempo Labs: For optimizing workflows and ensuring code quality.
-AI tools played a key role in improving efficiency and speeding up the development process.
+AI enhanced both development speed and creative problem-solving throughout the project.
