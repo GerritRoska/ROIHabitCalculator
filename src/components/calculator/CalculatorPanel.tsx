@@ -68,6 +68,24 @@ const WEAKNESS_OPTIONS = [
   },
 ];
 
+const ReferralBanner = () => {
+  return (
+    <div className="mt-4 p-4 bg-green-100 rounded-md">
+      <p className="text-sm text-green-700">
+        Like this calculator?{" "}
+        <a
+          href="https://acorns.com/share/?shareable_code=QM3PVD3&first_name=Gerrit"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-medium text-green-900 hover:underline"
+        >
+          Sign up for Acorns using my referral link!
+        </a>
+      </p>
+    </div>
+  );
+};
+
 const CalculatorPanel: React.FC<CalculatorPanelProps> = ({
   className = "",
 }) => {
@@ -599,6 +617,7 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({
                     showRealReturns={showRealReturns}
                     title="Investment Growth with Habit Savings"
                   />
+                  <ReferralBanner />
                 </div>
                 <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 text-sm mt-2">
                   <div className="flex items-center gap-2">
