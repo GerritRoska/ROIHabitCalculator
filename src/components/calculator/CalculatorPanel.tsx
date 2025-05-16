@@ -649,8 +649,20 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({
                 className="space-y-3 sm:space-y-4 animate-fade-in"
                 style={{ animationDelay: "0.4s" }}
               >
-                <h2 className="text-xl sm:text-2xl font-semibold mb-4 pt-2 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700">
-                  Investment Summary
+                <div className="flex items-center justify-between mb-4 pt-2">
+                  <h2 className="text-xl sm:text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700">
+                    Investment Summary
+                  </h2>
+                  <ExportButton 
+                    data={{
+                      finalAmount,
+                      totalContributions,
+                      interestEarned,
+                      weaknessItemCount,
+                      weaknessType
+                    }}
+                  />
+                </div>
                   {showRealReturns && (
                     <span className="text-sm font-normal text-muted-foreground ml-2 block sm:inline mt-2 sm:mt-0">
                       (Inflation Adjusted)
@@ -671,6 +683,17 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({
                     showMultipleWeaknesses ? weaknessList.length + 1 : 1
                   }
                 />
+
+                <div className="mt-8 pt-4 border-t border-gray-100">
+                  <h2 className="text-xl sm:text-2xl font-semibold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700">
+                    Your Investment Milestones
+                  </h2>
+                  <InvestmentMilestones
+                    finalAmount={finalAmount}
+                    weaknessItemCount={itemCount}
+                    weaknessType={selectedWeaknessType}
+                  />
+                </div>
               </div>
             </div>
           </div>
