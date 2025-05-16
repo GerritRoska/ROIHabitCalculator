@@ -1,34 +1,60 @@
+
 import React from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import CalculatorPanel from "./calculator/CalculatorPanel";
+import { Button } from "@/components/ui/button";
+import { Sun, Moon, Share2 } from "lucide-react";
+import { useTheme } from "@/components/theme-provider";
 
 const Home = () => {
+  const { theme, setTheme } = useTheme();
+  
+  const handleShare = async () => {
+    try {
+      await navigator.share({
+        title: 'Habit ROI Calculator',
+        text: 'Calculate how much your habits could be worth if invested!',
+        url: window.location.href
+      });
+    } catch (err) {
+      console.log('Share failed:', err);
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 p-3 md:p-6">
-      <header className="mb-5 text-center">
-        <h1 className="text-3xl md:text-4xl font-bold text-slate-800 mb-2">
+    <div className="min-h-screen bg-gradient-to-b from-background to-background/95 p-3 md:p-6">
+      <div className="absolute top-4 right-4 flex gap-2">
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+        >
+          {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+        </Button>
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={handleShare}
+        >
+          <Share2 className="h-5 w-5" />
+        </Button>
+      </div>
+
+      <main className="max-w-7xl mx-auto pt-16">
+        <h1 className="text-4xl md:text-5xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
           Habit ROI Calculator
         </h1>
-        <p className="text-slate-600 max-w-2xl mx-auto">
+        <p className="text-muted-foreground max-w-2xl mx-auto text-center mb-10">
           See how much your daily habits are costing you and how much you could
           save by investing that money instead. Calculate the true ROI of
           changing your habits and watch your potential wealth grow!
         </p>
-      </header>
+        
+        <div className="w-full">
+          <CalculatorPanel />
+        </div>
 
-      <main className="max-w-7xl mx-auto">
-        <Card className="border-slate-200 bg-gradient-to-br from-white to-slate-50/30 shadow-lg hover:shadow-xl transition-all duration-300">
-          <CardHeader className="bg-gradient-to-r from-white to-slate-50/50 border-b border-slate-100">
-            <CardTitle className="text-xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent/90">
-              The Cost of Your Habits Calculator
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="p-0">
-            <CalculatorPanel />
-          </CardContent>
-        </Card>
-
-        <div className="mt-8 text-center text-sm text-slate-500">
+        <div className="mt-8 text-center text-sm text-muted-foreground">
           <p>
             This calculator is for illustrative purposes only and does not
             guarantee actual investment results. Always consult with a financial
@@ -37,11 +63,8 @@ const Home = () => {
         </div>
       </main>
 
-      <footer className="mt-12 text-center text-sm text-slate-500 py-4 border-t border-slate-100 bg-gradient-to-b from-transparent to-slate-50/30">
-        <p>
-          © {new Date().getFullYear()} Investment Calculator. All rights
-          reserved.
-        </p>
+      <footer className="mt-12 text-center text-sm text-muted-foreground py-4 border-t border-border">
+        <p>© {new Date().getFullYear()} Investment Calculator. All rights reserved.</p>
       </footer>
     </div>
   );

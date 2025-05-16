@@ -5,7 +5,8 @@ import routes from "tempo-routes";
 
 function App() {
   return (
-    <Suspense fallback={<p>Loading...</p>}>
+    <ThemeProvider defaultTheme="light" enableSystem>
+      <Suspense fallback={<p>Loading...</p>}>
       <>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -13,6 +14,7 @@ function App() {
         {import.meta.env.VITE_TEMPO === "true" && useRoutes(routes)}
       </>
     </Suspense>
+    </ThemeProvider>
   );
 }
 
