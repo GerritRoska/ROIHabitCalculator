@@ -47,7 +47,7 @@ const InvestmentChart = ({
   }, [data]);
 
   return (
-    <Card className="w-full h-full bg-gradient-to-br from-white to-blue-50/30 shadow-xl border-0 overflow-hidden rounded-2xl transition-all duration-300 hover:shadow-2xl will-change-transform">
+    <Card className="w-full h-full bg-gradient-to-br from-background to-accent/5 shadow-xl border-0 overflow-hidden rounded-2xl transition-all duration-300 hover:shadow-2xl will-change-transform animate-float-slow">
       <CardContent className="p-3 sm:p-4 md:p-6">
         <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-4 sm:mb-6 gap-3 sm:gap-4">
           <h3 className="text-lg sm:text-xl font-semibold text-gray-800">

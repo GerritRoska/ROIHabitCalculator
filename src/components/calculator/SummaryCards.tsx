@@ -34,7 +34,7 @@ const SummaryCard = ({
     percentageChange === undefined ? true : percentageChange >= 0;
 
   return (
-    <Card className="bg-gradient-to-br from-white to-slate-50/30 shadow-md hover:shadow-lg border-0 transition-all duration-300 hover:translate-y-[-2px] rounded-xl overflow-hidden will-change-transform">
+    <Card className="bg-gradient-to-br from-background to-background/30 shadow-md hover:shadow-lg border-0 transition-all duration-300 hover:translate-y-[-2px] rounded-xl overflow-hidden will-change-transform animate-float">
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-1 sm:pb-2 px-3 sm:px-4 pt-3 sm:pt-4 bg-gradient-to-r from-transparent to-slate-50/50">
         <CardTitle className="text-xs sm:text-sm font-semibold text-gray-700">
           {title}
