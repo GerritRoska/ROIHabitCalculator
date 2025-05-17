@@ -21,7 +21,6 @@ import {
   ShoppingBag,
 } from "lucide-react";
 import InvestmentMilestones from "./InvestmentMilestones";
-import { ExportButton } from "./ExportButton";
 import InvestmentChart from "./InvestmentChart";
 import SummaryCards from "./SummaryCards";
 import ComparisonFeature from "./ComparisonFeature";
