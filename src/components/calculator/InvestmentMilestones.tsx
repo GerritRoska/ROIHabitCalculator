@@ -8,7 +8,7 @@ interface MilestoneProps {
   weaknessType: string;
 }
 
-export function InvestmentMilestones({ finalAmount, weaknessItemCount, weaknessType }: MilestoneProps) {
+const InvestmentMilestones = ({ finalAmount, weaknessItemCount, weaknessType }: MilestoneProps) => {
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat("en-US", {
       style: "currency",
@@ -61,4 +61,6 @@ export function InvestmentMilestones({ finalAmount, weaknessItemCount, weaknessT
       ))}
     </div>
   );
-}
+};
+
+export default InvestmentMilestones;
