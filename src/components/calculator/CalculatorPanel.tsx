@@ -659,8 +659,8 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({
                       finalAmount,
                       totalContributions,
                       interestEarned,
-                      weaknessItemCount,
-                      weaknessType,
+                      itemCount,
+                      weaknessType: selectedWeaknessType,
                     }}
                   />
                 </div>
