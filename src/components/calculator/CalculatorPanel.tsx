@@ -653,22 +653,22 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({
                   <h2 className="text-xl sm:text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700">
                     Investment Summary
                   </h2>
-                  <ExportButton 
+                  <ExportButton
                     data={{
                       finalAmount,
                       totalContributions,
                       interestEarned,
                       weaknessItemCount,
-                      weaknessType
+                      weaknessType,
                     }}
                   />
                 </div>
-                  {showRealReturns && (
-                    <span className="text-sm font-normal text-muted-foreground ml-2 block sm:inline mt-2 sm:mt-0">
-                      (Inflation Adjusted)
-                    </span>
-                  )}
-                </h2>
+                {showRealReturns && (
+                  <span className="text-sm font-normal text-muted-foreground ml-2 block sm:inline mt-2 sm:mt-0">
+                    (Inflation Adjusted)
+                  </span>
+                )}
+
                 <SummaryCards
                   finalAmount={finalAmount}
                   totalContributions={totalContributions}
