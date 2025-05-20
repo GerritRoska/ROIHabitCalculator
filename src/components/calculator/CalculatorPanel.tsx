@@ -575,6 +575,31 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({ className = "" }) => 
                   }
                 />
 
+                {/* Dynamic CTA Section */}
+                <div className="mt-8 mb-8 p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border border-green-100 animate-fade-in">
+                  <div className="text-center space-y-4">
+                    <h3 className="text-xl sm:text-2xl font-semibold text-green-800">
+                      {showMultipleWeaknesses && weaknessList.length > 0 ? 
+                        `Your combined ${formatCurrency(weaknessCost)}/${frequency} + ${weaknessList.map(w => 
+                          `${formatCurrency(w.cost)}/${w.frequency}`).join(' + ')} habits could grow to ${formatCurrency(finalAmount)}` :
+                        `Your ${formatCurrency(weaknessCost)}/${frequency} ${selectedWeaknessType.replace('_', ' ')} habit could become ${formatCurrency(finalAmount)}`
+                      }
+                    </h3>
+                    <p className="text-green-700">
+                      {showMultipleWeaknesses && weaknessList.length > 0 ?
+                        "Turn those small decisions into long-term wealth — Acorns can help." :
+                        "Acorns helps you invest that amount automatically — and grow it over time."
+                      }
+                    </p>
+                    <Button
+                      className="bg-green-600 hover:bg-green-700 text-white border-0 shadow-sm"
+                      onClick={() => window.open("https://www.acorns.com/share/?first_name=Gerrit&shareable_code=QM3PVD3", "_blank")}
+                    >
+                      🌱 Start Investing with Acorns →
+                    </Button>
+                  </div>
+                </div>
+
                 <div className="mt-8 pt-4 border-t border-gray-100">
                   <h2 className="text-xl sm:text-2xl font-semibold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700">
                     Your Investment Milestones

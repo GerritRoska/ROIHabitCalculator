@@ -39,24 +39,6 @@ const Home = () => {
           save by investing that money instead. Calculate the true ROI of
           changing your habits and watch your potential wealth grow!
         </p>
-        <div className="mt-4">
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Button
-                  variant="outline"
-                  className="bg-blue-50 hover:bg-blue-100 text-blue-600 border border-blue-200"
-                  onClick={() => window.open("https://www.acorns.com/share/?first_name=Gerrit&shareable_code=QM3PVD3", "_blank")}
-                >
-                  🌱 Start Investing with Acorns – $5 Bonus
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>Acorns helps you turn your habit savings into real investments automatically.</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-        </div>
       </div>
 
       <Card>
