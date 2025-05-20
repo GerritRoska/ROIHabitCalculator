@@ -48,17 +48,6 @@ const Home = () => {
       </Card>
 
       <div className="mt-8 text-center text-sm px-4 space-y-4">
-        <div className="flex flex-col items-center gap-2 text-muted-foreground">
-          <span>💸 Ready to turn your habit savings into real investments?</span>
-          <a
-            href="https://www.acorns.com/share/?first_name=Gerrit&shareable_code=QM3PVD3"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-primary hover:underline"
-          >
-            Try Acorns + get $5 — it's what we recommend
-          </a>
-        </div>
         <p className="text-muted-foreground max-w-2xl mx-auto">
           This calculator is for illustrative purposes only and does not
           guarantee actual investment results. Always consult with a financial
