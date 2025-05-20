@@ -30,6 +30,10 @@ const formatCurrency = (value: number) => {
   }).format(value);
 };
 
+const formatNumber = (value: number) => {
+  return new Intl.NumberFormat("en-US").format(value);
+};
+
 export function ExportButton({ data }: ExportButtonProps) {
   const handlePDFExport = () => {
     const doc = new jsPDF();
@@ -43,16 +47,14 @@ export function ExportButton({ data }: ExportButtonProps) {
     doc.text("Your Habit ROI Summary", pageWidth / 2, yPosition, { align: "center" });
     yPosition += lineHeight * 2;
 
-    // Investment Details
-    doc.setFontSize(12);
-    doc.setTextColor(51, 51, 51);
-
     // Habit Information
+    doc.setFontSize(14);
     doc.setFont(undefined, 'bold');
     doc.text("Habit Details", 20, yPosition);
     yPosition += lineHeight;
+    doc.setFontSize(12);
     doc.setFont(undefined, 'normal');
-    doc.text(`${data.weaknessType.charAt(0).toUpperCase() + data.weaknessType.slice(1)} avoided: ${data.itemCount.toLocaleString()}`, 20, yPosition);
+    doc.text(`${data.weaknessType.charAt(0).toUpperCase() + data.weaknessType.slice(1)} avoided: ${formatNumber(data.itemCount)}`, 20, yPosition);
     yPosition += lineHeight;
     if (data.annualSavings) {
       doc.text(`Annual Savings: ${formatCurrency(data.annualSavings)}`, 20, yPosition);
@@ -61,11 +63,13 @@ export function ExportButton({ data }: ExportButtonProps) {
 
     // Personal Information
     yPosition += lineHeight;
+    doc.setFontSize(14);
     doc.setFont(undefined, 'bold');
     doc.text("Personal Information", 20, yPosition);
     yPosition += lineHeight;
+    doc.setFontSize(12);
     doc.setFont(undefined, 'normal');
-    if (data.currentAge && data.retirementAge) {
+    if (data.currentAge !== undefined && data.retirementAge !== undefined) {
       doc.text(`Current Age: ${data.currentAge} years`, 20, yPosition);
       yPosition += lineHeight;
       doc.text(`Retirement Age: ${data.retirementAge} years`, 20, yPosition);
@@ -76,9 +80,11 @@ export function ExportButton({ data }: ExportButtonProps) {
 
     // Investment Parameters
     yPosition += lineHeight;
+    doc.setFontSize(14);
     doc.setFont(undefined, 'bold');
     doc.text("Investment Parameters", 20, yPosition);
     yPosition += lineHeight;
+    doc.setFontSize(12);
     doc.setFont(undefined, 'normal');
     if (data.returnRate !== undefined) {
       doc.text(`Return Rate: ${data.returnRate}%`, 20, yPosition);
@@ -93,28 +99,33 @@ export function ExportButton({ data }: ExportButtonProps) {
       }
     }
 
-    // Results
+    // Investment Results
     yPosition += lineHeight;
+    doc.setFontSize(14);
     doc.setFont(undefined, 'bold');
     doc.text("Investment Results", 20, yPosition);
     yPosition += lineHeight;
+    doc.setFontSize(12);
     doc.setFont(undefined, 'normal');
 
     // Nominal Values
-    doc.text("Nominal Values:", 20, yPosition);
+    doc.setFont(undefined, 'bold');
+    doc.text("Nominal Values", 20, yPosition);
     yPosition += lineHeight;
-    doc.text(`Final Amount: ${formatCurrency(data.finalAmount)}`, 30, yPosition);
+    doc.setFont(undefined, 'normal');
+    doc.text(`Final Amount: ${formatCurrency(data.nominalValue || data.finalAmount)}`, 30, yPosition);
     yPosition += lineHeight;
     doc.text(`Total Contributions: ${formatCurrency(data.totalContributions)}`, 30, yPosition);
     yPosition += lineHeight;
     doc.text(`Interest Earned: ${formatCurrency(data.interestEarned)}`, 30, yPosition);
-    yPosition += lineHeight;
+    yPosition += lineHeight * 1.5;
 
     // Inflation Adjusted Values
     if (data.realValue) {
+      doc.setFont(undefined, 'bold');
+      doc.text("Inflation Adjusted Values", 20, yPosition);
       yPosition += lineHeight;
-      doc.text("Inflation Adjusted Values:", 20, yPosition);
-      yPosition += lineHeight;
+      doc.setFont(undefined, 'normal');
       doc.text(`Final Amount: ${formatCurrency(data.realValue)}`, 30, yPosition);
       yPosition += lineHeight;
       if (data.realContributions) {
@@ -126,7 +137,6 @@ export function ExportButton({ data }: ExportButtonProps) {
         yPosition += lineHeight;
       }
     }
-    yPosition += lineHeight * 2;
 
     // Footer
     doc.setFontSize(10);
