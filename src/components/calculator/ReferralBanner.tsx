@@ -14,7 +14,7 @@ const ReferralBanner = () => {
           Try Acorns + get $5 bonus
         </Button>
         <p className="text-sm text-muted-foreground text-center italic">
-          That $5 could be $226.30 in 40 years (at a assumed average 10% growth rate) 😉
+          That $5 could be $226.30 in 40 years (at an assumed average 10% growth rate) 😉
         </p>
       </div>
     </Card>
