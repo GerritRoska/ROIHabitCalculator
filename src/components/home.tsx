@@ -46,12 +46,26 @@ const Home = () => {
         </CardContent>
       </Card>
 
-      <div className="mt-8 text-center text-sm px-4">
-        <p className="text-muted-foreground max-w-2xl mx-auto">
-          This calculator is for illustrative purposes only and does not
-          guarantee actual investment results. Always consult with a financial
-          advisor before making investment decisions.
-        </p>
+      <div className="mt-8 text-center text-sm px-4 space-y-4">
+        <div className="flex flex-col items-center gap-2">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            This calculator is for illustrative purposes only and does not
+            guarantee actual investment results. Always consult with a financial
+            advisor before making investment decisions.
+          </p>
+          <div className="flex flex-col items-center gap-2 text-muted-foreground mt-4">
+            <span>💸 Ready to turn your habit savings into real investments?</span>
+            <a
+              href="https://www.acorns.com/share/?first_name=Gerrit&shareable_code=QM3PVD3"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+            >
+              Try Acorns + get $5 — That could be $226.30 in 40 years (at 10% rate) 😉
+            </a>
+          </div>
+          <p className="text-xs text-muted-foreground mt-2">© 2025 Investment Calculator</p>
+        </div>
       </div>
     </div>
   );
