@@ -587,7 +587,7 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({ className = "" }) => 
                         ][Math.floor(Math.random() * 3)]}
                       </p>
                     )}
-                    <h3 className="text-xl sm:text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
+                    <h3 className="text-xl sm:text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">
                       {(() => {
                         // Calculate costs based on frequency
                         const calculatePeriodCost = (data: WeaknessData) => {
@@ -623,7 +623,7 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({ className = "" }) => 
                     </p>
                     <p className="text-sm mt-2">
                       <span>🎁</span>
-                      <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
+                      <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">
                         Includes a $5 bonus to get you started.
                       </span>
                     </p>
