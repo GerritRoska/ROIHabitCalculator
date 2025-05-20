@@ -47,7 +47,7 @@ export function ExportButton({ data }: ExportButtonProps) {
     doc.text("Your Habit ROI Summary", pageWidth / 2, yPosition, { align: "center" });
     yPosition += lineHeight * 2;
 
-    // Habit Information
+    // Habit Details
     doc.setFontSize(14);
     doc.setFont(undefined, 'bold');
     doc.text("Habit Details", 20, yPosition);
