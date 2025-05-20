@@ -118,3 +118,11 @@ Gerrit Roska
 
 I love and want to create things that improve, impact and inspire peoples lives
 [Connect with me on LinkedIn](https://www.linkedin.com/in/gerritroska/)
+
+---
+### 🛡️ Ownership & Attribution
+
+This tool was created by [Gerrit Roska](https://www.linkedin.com/in/gerritroska/) and is shared publicly to help others learn, build, and reflect on personal finance and behavior change.
+
+If you fork or reuse this project, please include clear credit and a link to the original repository:
+🔗 https://github.com/GerritRoska/ROIHabitCalculator
