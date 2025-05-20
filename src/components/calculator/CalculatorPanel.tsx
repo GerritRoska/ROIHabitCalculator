@@ -25,7 +25,7 @@ import SummaryCards from "./SummaryCards";
 import ComparisonFeature from "./ComparisonFeature";
 import { ExportButton } from "./ExportButton";
 import CoffeeCalculator, { WeaknessData } from "./CoffeeCalculator";
-import ReferralBanner from "./ReferralBanner";
+
 
 interface CalculatorPanelProps {
   className?: string;
@@ -141,7 +141,7 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({
     let nominalBalance = initialInvestment;
     let realBalance = initialInvestment;
 
-    for (let year = 0; year <= calculationPeriod; year) {
+    for (let year = 0; year <= calculationPeriod; year++) {
       // For year 0, just use initial investment
       if (year === 0) {
         // No changes needed for year 0
