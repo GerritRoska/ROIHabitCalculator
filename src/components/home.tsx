@@ -75,7 +75,7 @@ const Home = () => {
               rel="noopener noreferrer"
               className="text-primary hover:underline"
             >
-              Try Acorns + get $5 — That could be $226.30 in 40 years (at 10% rate) 😉
+              Try Acorns + get $5 — That $5 could be $226.30 in 40 years (at a assumed average 10% growth rate) 😉
             </a>
           </div>
           <p className="text-muted-foreground max-w-2xl mx-auto mt-4">
