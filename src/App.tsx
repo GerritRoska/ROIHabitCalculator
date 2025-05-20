@@ -3,7 +3,6 @@ import { Suspense } from "react";
 import { ThemeProvider } from "./components/theme-provider";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/home";
-import { Footer } from "./components/ui/footer";
 
 function App() {
   return (
@@ -13,7 +12,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
           </Routes>
-          <Footer />
         </div>
       </Suspense>
     </ThemeProvider>
