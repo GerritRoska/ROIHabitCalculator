@@ -5,8 +5,6 @@ import CalculatorPanel from "./calculator/CalculatorPanel";
 import ReferralButton from "./ReferralButton";
 
 const Home = () => {
-  const { theme, setTheme } = useTheme();
-  
   const handleShare = async () => {
     try {
       await navigator.share({
