@@ -1,0 +1,90 @@
+🌱 ✅ Acorns Integration Strategy — Full Breakdown
+🔁 1. Homepage Button (Already Good – Keep It!)
+Text:
+
+“Start Investing with Acorns – $5 Bonus”
+
+What to Do:
+
+Keep this high up but not huge
+
+Style: subtle green button (#1DB954), small icon (🌱 or 💰)
+
+Add a tooltip:
+
+“Acorns helps you turn your habit savings into real investments automatically.”
+
+📊 2. Inline Text Under the Final Investment Result
+Where:
+Right under the “Final Amount” projection (e.g., $196,402)
+
+Text Suggestion:
+
+💡 Want to actually grow this money?
+Acorns automatically invests it for you — even if it’s just $5/week.
+Try Acorns + get $5 →
+
+Style: smaller font, light gray text with a green accent
+
+Optional: toggle to hide/show if user wants fewer suggestions
+
+📈 3. Add an “Investment Impact” Visualization
+Where:
+Under “Habit ROI” chart or final summary.
+
+Display:
+
+A bar or chart comparing:
+
+What you saved (e.g., $63K)
+
+What Acorns could turn it into (e.g., $196K)
+
+Label: “Investing with Acorns (7% avg return)”
+
+This gives the "small action, big result" visual punch.
+
+Text Suggestion:
+
+“Investing even small amounts consistently — like $5/day — could turn into $200,000+ over time.”
+
+🧩 4. Footer CTA (Subtle but Persistent)
+Where:
+At the very bottom of the site, before the copyright.
+
+Text:
+
+html
+Copy
+Edit
+<div style="text-align: center; font-size: 0.9rem; color: #B0B0B0; margin-top: 3rem;">
+  💸 Ready to turn your habit savings into real investments? 
+  <a href="https://www.acorns.com/share/?first_name=Gerrit&shareable_code=QM3PVD3" target="_blank" style="color: #1DB954; font-weight: bold;">Try Acorns + get $5 →</a>
+</div>
+Small text
+
+Matches tone of the site
+
+Not interruptive — just present
+
+🧠 5. In the PDF Export (If You Have It)
+Where:
+At the bottom of the exported summary PDF
+
+Text Suggestion:
+
+“Want to actually invest your habit savings? Acorns makes it easy to start.
+Get started with $5 →”
+
+💬 6. In the Fun Fact/Milestone Section
+If you're listing:
+
+“You’ve avoided 12,775 coffees ☕”
+
+Add:
+
+“That’s $63,875 saved. Acorns could’ve turned that into $196,402.”
+
+Optional Tooltip or Info Icon explaining how:
+
+“We calculated this using 7% compound annual growth, like Acorns portfolios.”
