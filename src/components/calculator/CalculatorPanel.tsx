@@ -576,18 +576,18 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({ className = "" }) => 
                 />
 
                 {/* Dynamic CTA Section */}
-                <div className="mt-8 mb-8 p-8 rounded-xl bg-[#e8fbe7] shadow-[0_4px_12px_rgba(0,0,0,0.05)] text-center transition-all duration-300 max-w-[700px] mx-auto animate-fade-in">
+                <div className="mt-8 mb-8 p-8 rounded-xl bg-[#e9f5ff] shadow-[0_8px_16px_rgba(0,75,135,0.08)] text-center transition-all duration-300 max-w-[700px] mx-auto animate-fade-in">
                   <div className="space-y-4">
                     {showMultipleWeaknesses && weaknessList.length > 0 && (
-                      <p className="text-green-700 text-lg italic">
+                      <p className="text-[#004b87] text-lg italic">
                         {[
-                          "This isn't just spare change — it's your future working for you.",
-                          "Small choices add up. What could yours become?",
-                          "You're already halfway to building wealth. Now automate it."
+                          "Turn your mindful choices into real wealth",
+                          "Ready to make your savings work harder?",
+                          "Give your habits the power to grow"
                         ][Math.floor(Math.random() * 3)]}
                       </p>
                     )}
-                    <h3 className="text-xl sm:text-2xl font-semibold text-green-800">
+                    <h3 className="text-xl sm:text-2xl font-semibold text-[#004b87]">
                       {(() => {
                         // Calculate costs based on frequency
                         const calculatePeriodCost = (data: WeaknessData) => {
@@ -621,11 +621,14 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({ className = "" }) => 
                     <p className="text-green-700">
                       Acorns helps you invest that amount automatically — and grow it over time.
                     </p>
+                    <p className="text-sm text-[#004b87] mt-2">
+                      🎁 Includes a $5 bonus to get you started.
+                    </p>
                     <Button
-                      className="bg-[#1DB954] hover:bg-[#1a9d48] text-white font-bold px-6 py-3 rounded-lg shadow-sm"
+                      className="bg-[#004b87] hover:bg-[#003b6d] text-white font-bold px-6 py-3 rounded-lg shadow-sm"
                       onClick={() => window.open("https://www.acorns.com/share/?first_name=Gerrit&shareable_code=QM3PVD3", "_blank")}
                     >
-                      🌱 Start Investing with Acorns →
+                      🌱 Start Investing with Acorns — Get $5 Bonus →
                     </Button>
                   </div>
                 </div>

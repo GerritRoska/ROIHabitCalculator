@@ -50,15 +50,16 @@ const Home = () => {
       <div className="mt-8 text-center text-sm px-4 space-y-4">
         <div className="flex flex-col items-center gap-2">
           <div className="flex flex-col items-center gap-2 text-muted-foreground">
-            <span>💸 Ready to turn your habit savings into real investments?</span>
-            <a
-              href="https://www.acorns.com/share/?first_name=Gerrit&shareable_code=QM3PVD3"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:underline"
+            <Button
+              variant="ghost"
+              className="bg-[#e0f0ff] hover:bg-[#d0e5ff] text-[#004b87] px-6 py-3 rounded-lg"
+              onClick={() => window.open("https://www.acorns.com/share/?first_name=Gerrit&shareable_code=QM3PVD3", "_blank")}
             >
-              Try Acorns + get $5 — That $5 could be $226.30 in 40 years (at a assumed average 10% growth rate) 😉
-            </a>
+              🌱 Try Acorns + Get $5 Bonus
+            </Button>
+            <p className="text-sm text-muted-foreground mt-2">
+              That $5 could grow into $226.30 in 40 years (at a 10% average return) 😉
+            </p>
           </div>
           <p className="text-muted-foreground max-w-2xl mx-auto mt-4">
             This calculator is for illustrative purposes only and does not
