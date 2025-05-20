@@ -587,7 +587,7 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({ className = "" }) => 
                         ][Math.floor(Math.random() * 3)]}
                       </p>
                     )}
-                    <h3 className="text-xl sm:text-2xl font-semibold text-[#004b87]">
+                    <h3 className="text-xl sm:text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700">
                       {(() => {
                         // Calculate costs based on frequency
                         const calculatePeriodCost = (data: WeaknessData) => {
@@ -621,7 +621,7 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({ className = "" }) => 
                     <p className="text-gray-900">
                       Acorns helps you invest that amount automatically — and grow it over time.
                     </p>
-                    <p className="text-sm text-[#004b87] mt-2">
+                    <p className="text-sm bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700 mt-2">
                       🎁 Includes a $5 bonus to get you started.
                     </p>
                     <Button
