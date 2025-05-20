@@ -580,9 +580,9 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({ className = "" }) => 
                   <div className="text-center space-y-4">
                     <h3 className="text-xl sm:text-2xl font-semibold text-green-800">
                       {showMultipleWeaknesses && weaknessList.length > 0 ? 
-                        `Your combined ${formatCurrency(weaknessCost)}/${frequency} + ${weaknessList.map(w => 
+                        `Your combined ${formatCurrency(weaknessData.cost)}/${weaknessData.frequency} + ${weaknessList.map(w => 
                           `${formatCurrency(w.cost)}/${w.frequency}`).join(' + ')} habits could grow to ${formatCurrency(finalAmount)}` :
-                        `Your ${formatCurrency(weaknessCost)}/${frequency} ${selectedWeaknessType.replace('_', ' ')} habit could become ${formatCurrency(finalAmount)}`
+                        `Your ${formatCurrency(weaknessData.cost)}/${weaknessData.frequency} ${selectedWeaknessType.replace('_', ' ')} habit could become ${formatCurrency(finalAmount)}`
                       }
                     </h3>
                     <p className="text-green-700">
