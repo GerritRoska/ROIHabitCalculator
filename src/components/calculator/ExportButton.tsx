@@ -16,6 +16,8 @@ interface ExportButtonProps {
     returnRate?: number;
     inflationRate?: number;
     realValue?: number;
+    realContributions?: number;
+    realInterestEarned?: number;
     nominalValue?: number;
   };
 }
@@ -78,15 +80,17 @@ export function ExportButton({ data }: ExportButtonProps) {
     doc.text("Investment Parameters", 20, yPosition);
     yPosition += lineHeight;
     doc.setFont(undefined, 'normal');
-    if (data.returnRate) {
+    if (data.returnRate !== undefined) {
       doc.text(`Return Rate: ${data.returnRate}%`, 20, yPosition);
       yPosition += lineHeight;
     }
-    if (data.inflationRate) {
+    if (data.inflationRate !== undefined) {
       doc.text(`Inflation Rate: ${data.inflationRate}%`, 20, yPosition);
       yPosition += lineHeight;
-      doc.text(`Real Return Rate: ${(data.returnRate! - data.inflationRate!).toFixed(1)}%`, 20, yPosition);
-      yPosition += lineHeight;
+      if (data.returnRate !== undefined) {
+        doc.text(`Real Return Rate: ${(data.returnRate - data.inflationRate).toFixed(1)}%`, 20, yPosition);
+        yPosition += lineHeight;
+      }
     }
 
     // Results
@@ -95,19 +99,33 @@ export function ExportButton({ data }: ExportButtonProps) {
     doc.text("Investment Results", 20, yPosition);
     yPosition += lineHeight;
     doc.setFont(undefined, 'normal');
-    if (data.nominalValue) {
-      doc.text(`Nominal Final Amount: ${formatCurrency(data.nominalValue)}`, 20, yPosition);
-      yPosition += lineHeight;
-    }
+
+    // Nominal Values
+    doc.text("Nominal Values:", 20, yPosition);
+    yPosition += lineHeight;
+    doc.text(`Final Amount: ${formatCurrency(data.finalAmount)}`, 30, yPosition);
+    yPosition += lineHeight;
+    doc.text(`Total Contributions: ${formatCurrency(data.totalContributions)}`, 30, yPosition);
+    yPosition += lineHeight;
+    doc.text(`Interest Earned: ${formatCurrency(data.interestEarned)}`, 30, yPosition);
+    yPosition += lineHeight;
+
+    // Inflation Adjusted Values
     if (data.realValue) {
-      doc.text(`Inflation-Adjusted Final Amount: ${formatCurrency(data.realValue)}`, 20, yPosition);
       yPosition += lineHeight;
+      doc.text("Inflation Adjusted Values:", 20, yPosition);
+      yPosition += lineHeight;
+      doc.text(`Final Amount: ${formatCurrency(data.realValue)}`, 30, yPosition);
+      yPosition += lineHeight;
+      if (data.realContributions) {
+        doc.text(`Total Contributions: ${formatCurrency(data.realContributions)}`, 30, yPosition);
+        yPosition += lineHeight;
+      }
+      if (data.realInterestEarned) {
+        doc.text(`Interest Earned: ${formatCurrency(data.realInterestEarned)}`, 30, yPosition);
+        yPosition += lineHeight;
+      }
     }
-    doc.text(`Final Amount: ${formatCurrency(data.finalAmount)}`, 20, yPosition);
-    yPosition += lineHeight;
-    doc.text(`Total Contributions: ${formatCurrency(data.totalContributions)}`, 20, yPosition);
-    yPosition += lineHeight;
-    doc.text(`Interest Earned: ${formatCurrency(data.interestEarned)}`, 20, yPosition);
     yPosition += lineHeight * 2;
 
     // Footer
