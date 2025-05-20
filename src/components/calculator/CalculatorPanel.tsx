@@ -601,19 +601,19 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({ className = "" }) => 
                           // Calculate total annual cost
                           const totalAnnualCost = [weaknessData, ...weaknessList]
                             .reduce((sum, habit) => sum + calculatePeriodCost(habit), 0);
-                          
+
                           // Convert to monthly if under $1000/year
                           const useMonthly = totalAnnualCost < 1000;
                           const displayAmount = useMonthly ? 
                             totalAnnualCost / 12 : 
                             totalAnnualCost;
-                          
+
                           return `Your combined habits (~${formatCurrency(displayAmount)}/${useMonthly ? 'month' : 'year'}) could grow to ${formatCurrency(finalAmount)}`;
                         } else {
                           // Single habit calculation
                           const periodCost = weaknessData.cost * weaknessData.timesPerFrequency;
                           const habitName = WEAKNESS_OPTIONS.find(opt => opt.value === weaknessData.type)?.label.toLowerCase() || 'habit';
-                          
+
                           return `Your ${formatCurrency(periodCost)}/${weaknessData.frequency} ${habitName} habit could become ${formatCurrency(finalAmount)}`;
                         }
                       })()}
