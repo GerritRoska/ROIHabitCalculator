@@ -1,0 +1,109 @@
+✅ FINAL INSTRUCTION FOR REPLIT / CLAUDE
+🎯 Copy and paste this into Replit or Claude to complete and polish your dynamic Acorns CTA integration.
+
+plaintext
+Copy
+Edit
+Please update the dynamic Acorns CTA block to:
+
+---
+
+✅ 1. Only display **after** results are calculated and below the “Investment Summary” section.
+
+---
+
+✅ 2. Always display **only one CTA block**, even if multiple habits are active.
+
+---
+
+✅ 3. Generate dynamic CTA text as follows:
+
+### A) If ONLY ONE habit is active:
+- Calculate total cost for the period:
+  cost = `costPerUse × timesPerPeriod`
+- Correctly reflect the actual frequency (daily, weekly, monthly)
+- Use the correct singular **habit name** (not pluralized)
+- Example output:
+
+💡 Your $15/week eating out habit could become $89,000
+Acorns helps you invest that amount automatically — and grow it over time.
+
+sql
+Copy
+Edit
+
+- Use the habit name the user selected/inputted — not always “coffee”
+
+---
+
+### B) If “Combine Multiple Weaknesses” is enabled and multiple habits are active:
+
+- Instead of listing all habit names and frequencies (too long), summarize them.
+- Calculate the **combined spending per month or per year**:
+- Use per year if > $1,000/year
+- Use per month if under that
+
+- Example output:
+🧠 Your combined habits (~$280/month) could grow to $520,000
+Acorns helps you invest that amount automatically — and grow it over time.
+
+yaml
+Copy
+Edit
+
+- Add an **optional emotional line** above the headline:
+- For example:
+  - “This isn’t just spare change — it’s your future working for you.”
+  - “Small choices add up. What could yours become?”
+  - “You're already halfway to building wealth. Now automate it.”
+
+---
+
+✅ 4. Subtext under the headline should always be:
+Acorns helps you invest that amount automatically — and grow it over time.
+
+yaml
+Copy
+Edit
+
+---
+
+✅ 5. Below this text, insert the CTA button:
+- Label: “🌱 Start Investing with Acorns →”
+- URL: `https://www.acorns.com/share/?first_name=Gerrit&shareable_code=QM3PVD3`
+- Styling:
+  - Green background (#1DB954)
+  - White text
+  - Rounded corners
+  - Bold
+  - Center aligned
+
+---
+
+✅ 6. CTA Container Styling:
+
+Apply these styles to the entire CTA block container:
+
+```css
+border-radius: 12px;
+background-color: #e8fbe7;
+padding: 32px 24px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+text-align: center;
+transition: all 0.3s ease;
+max-width: 700px;
+margin: 40px auto;
+If possible, include a fade-in effect when it first appears.
+
+✅ 7. Fix frequency-related math and grammar issues:
+
+Make sure:
+
+Weekly habits (e.g., 2× at $5) show as $10/week — not $5/week
+
+Monthly habits (e.g., 4× per month at $12) show as $48/month
+
+Daily habits multiply correctly
+
+The habit name is inserted dynamically, and does not default to "coffee" or "coffees"
+
