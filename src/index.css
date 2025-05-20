@@ -104,39 +104,7 @@
     --radius: 0.5rem;
   }
 
-  .dark {
-    --background: 0 0% 7%;
-    --foreground: 0 0% 96%;
-    
-    --card: 0 0% 12%;
-    --card-foreground: 0 0% 96%;
-    
-    --popover: 0 0% 12%;
-    --popover-foreground: 0 0% 96%;
-    
-    --primary: 142 83% 42%;
-    --primary-foreground: 0 0% 100%;
-    
-    --secondary: 0 0% 16%;
-    --secondary-foreground: 0 0% 96%;
-    
-    --muted: 0 0% 16%;
-    --muted-foreground: 0 0% 69%;
-    
-    --accent: 0 0% 16%;
-    --accent-foreground: 0 0% 96%;
-    
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 96%;
-    
-    --border: 0 0% 12%;
-    --input: 0 0% 16%;
-    --ring: 160 84% 39%;
-
-    --shadow: 0 0% 100% 0.05;
-
-    --radius: 0.5rem;
-  }
+  
 }
 
 @layer base {
@@ -148,43 +116,7 @@
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
 
-.dark .card,
-.dark .drawer-content,
-.dark .popover-content {
-  box-shadow: 0 4px 12px rgba(var(--shadow));
-  backdrop-filter: blur(8px);
-}
 
-.dark input,
-.dark textarea,
-.dark select {
-  background-color: hsl(0 0% 16%);
-  color: hsl(0 0% 96%);
-}
-
-.dark input::placeholder,
-.dark textarea::placeholder {
-  color: hsl(0 0% 69%);
-}
-
-.dark input:focus,
-.dark textarea:focus,
-.dark select:focus {
-  box-shadow: 0 0 0 2px hsl(160 84% 39% / 0.3);
-}
-
-.dark button:not(.ghost):hover {
-  transform: scale(1.02);
-  filter: brightness(1.1);
-  transition: all 0.2s ease;
-}
-
-.dark body {
-  background: radial-gradient(circle at top right, 
-    hsl(0 0% 9%), 
-    hsl(0 0% 7%)
-  );
-}
 
   }
 
