@@ -141,7 +141,7 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({
     let nominalBalance = initialInvestment;
     let realBalance = initialInvestment;
 
-    for (let year = 0; year <= calculationPeriod; year++) {
+    for (let year = 0; year <= calculationPeriod; year) {
       // For year 0, just use initial investment
       if (year === 0) {
         // No changes needed for year 0
@@ -604,7 +604,6 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({
                     showRealReturns={showRealReturns}
                     title="Investment Growth with Habit Savings"
                   />
-                  <ReferralBanner />
                 </div>
                 <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 text-sm mt-2">
                   <div className="flex items-center gap-2">
