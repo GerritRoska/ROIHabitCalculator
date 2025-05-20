@@ -47,9 +47,9 @@ const InvestmentMilestones = ({ finalAmount, weaknessItemCount, weaknessType }: 
   return (
     <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
       {milestones.map((milestone, index) => (
-        <Card key={index} className={`bg-gradient-to-br ${milestone.achieved ? 'from-green-50 to-green-100/30' : 'from-gray-50 to-gray-100/30'} border-0 transition-all duration-300`}>
+        <Card key={index} className={`bg-gradient-to-br ${milestone.achieved ? 'from-blue-50 to-blue-100/30' : 'from-gray-50 to-gray-100/30'} border-0 transition-all duration-300`}>
           <CardContent className="p-4 flex items-start gap-3">
-            <div className={`p-2 rounded-lg ${milestone.achieved ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'}`}>
+            <div className={`p-2 rounded-lg ${milestone.achieved ? 'bg-blue-100 text-blue-700' : 'bg-gray-100 text-gray-500'}`}>
               <milestone.icon className="h-5 w-5" />
             </div>
             <div>
