@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -47,13 +46,12 @@ const Home = () => {
         </CardContent>
       </Card>
 
-      <div className="mt-8 text-center text-sm px-4 space-y-4">
+      <div className="mt-8 text-center text-sm px-4">
         <p className="text-muted-foreground max-w-2xl mx-auto">
           This calculator is for illustrative purposes only and does not
           guarantee actual investment results. Always consult with a financial
           advisor before making investment decisions.
         </p>
-        <p className="text-xs text-muted-foreground">© 2025 Investment Calculator</p>
       </div>
     </div>
   );
