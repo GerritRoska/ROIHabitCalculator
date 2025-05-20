@@ -52,7 +52,7 @@ const Home = () => {
           <div className="flex flex-col items-center gap-2 text-muted-foreground">
             <Button
               variant="ghost"
-              className="bg-[#e0f0ff] hover:bg-[#d0e5ff] text-[#004b87] px-6 py-3 rounded-lg"
+              className="bg-gradient-to-r from-primary to-accent text-white px-6 py-3 rounded-lg hover:opacity-90 transition-opacity"
               onClick={() => window.open("https://www.acorns.com/share/?first_name=Gerrit&shareable_code=QM3PVD3", "_blank")}
             >
               🌱 Try Acorns + Get $5 Bonus

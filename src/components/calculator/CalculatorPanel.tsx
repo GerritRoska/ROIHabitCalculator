@@ -625,7 +625,7 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({ className = "" }) => 
                       🎁 Includes a $5 bonus to get you started.
                     </p>
                     <Button
-                      className="bg-[#004b87] hover:bg-[#003b6d] text-white font-bold px-6 py-3 rounded-lg shadow-sm"
+                      className="bg-gradient-to-r from-primary to-accent text-white font-bold px-6 py-3 rounded-lg shadow-sm hover:opacity-90 transition-opacity"
                       onClick={() => window.open("https://www.acorns.com/share/?first_name=Gerrit&shareable_code=QM3PVD3", "_blank")}
                     >
                       🌱 Start Investing with Acorns — Get $5 Bonus →
