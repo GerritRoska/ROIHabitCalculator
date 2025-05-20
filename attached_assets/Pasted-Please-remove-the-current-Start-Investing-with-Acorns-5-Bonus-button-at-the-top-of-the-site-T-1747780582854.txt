@@ -1,0 +1,46 @@
+Please remove the current "Start Investing with Acorns – $5 Bonus" button at the top of the site.
+
+Then, create a new CTA block that appears ONLY after the user has entered their habits and calculated their results.
+
+✅ The CTA block should:
+- Be placed directly below the final “Investment Summary” result and **above** the “Your Investment Milestones” section.
+- Include **only one CTA button** for Acorns, not multiple.
+- Dynamically update its text based on the user’s habit(s), including:
+  - The name of the habit
+  - The cost per period (day/week/month)
+  - The projected investment value
+
+✅ Handle both SINGLE and MULTIPLE habits with dynamic language:
+
+🟦 **If only one habit is being tracked:**
+- Show this format:
+  💡 "Your $X/period [habit] could become $Y"
+- Example:
+  💡 "Your $3/day coffee habit could become $196,000"
+- Subtext:
+  “Acorns helps you invest that amount automatically — and grow it over time.”
+
+🟨 **If 'Combine Multiple Weaknesses' is enabled and multiple habits are active:**
+- Show this format:
+  🧠 "Your combined $X + $Z habits could grow to $Total"
+- Example:
+  🧠 "Your combined $3/day + $20/week habits could grow to $293,000"
+- Subtext:
+  “Turn those small decisions into long-term wealth — Acorns can help.”
+
+✅ Below that dynamic text, insert one single CTA button:
+- Label: “🌱 Start Investing with Acorns →”
+- Link: https://www.acorns.com/share/?first_name=Gerrit&shareable_code=QM3PVD3
+- Style: match current site button styles (rounded, green, white text, no large shadow)
+
+✅ The CTA block must:
+- Be hidden (`display: none`) by default
+- Appear only after the calculation is done
+- Pull from the actual habit data the user entered (cost, frequency, etc.)
+- Work on both desktop and mobile layouts
+
+✅ Optional:
+- Add a soft fade-in animation when the CTA appears
+- Leave the small footer CTA text (“Try Acorns + get $5”) at the bottom as a non-intrusive secondary link
+
+This CTA must feel helpful, not salesy, and must clearly connect the user’s **input and result** with the value of Acorns.
