@@ -3,6 +3,7 @@ import { ThemeProvider } from "./components/theme-provider";
 import { useRoutes, Routes, Route } from "react-router-dom";
 import Home from "./components/home";
 import routes from "tempo-routes";
+import { Footer } from "./components/ui/footer";
 
 function Footer() {
   const handleShare = async () => {
@@ -43,6 +44,25 @@ function App() {
       </Suspense>
     </ThemeProvider>
   );
+}
+
+async function shareResults(amount: number, years: number) {
+  const text = `I saved $${amount.toLocaleString()} by optimizing my habits for ${years} years — try it yourself!`;
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        title: 'My Investment Results',
+        text,
+        url: window.location.href
+      });
+    } catch (err) {
+      navigator.clipboard.writeText(text);
+      alert('Results copied to clipboard!');
+    }
+  } else {
+    navigator.clipboard.writeText(text);
+    alert('Results copied to clipboard!');
+  }
 }
 
 export default App;
