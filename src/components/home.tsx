@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Share2 } from "lucide-react";
 import CalculatorPanel from "./calculator/CalculatorPanel";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 
 const Home = () => {
   const handleShare = async () => {
@@ -38,6 +39,24 @@ const Home = () => {
           save by investing that money instead. Calculate the true ROI of
           changing your habits and watch your potential wealth grow!
         </p>
+        <div className="mt-4">
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button
+                  variant="outline"
+                  className="bg-[#1DB954] hover:bg-[#1DB954]/90 text-white border-0"
+                  onClick={() => window.open("https://www.acorns.com/share/?first_name=Gerrit&shareable_code=QM3PVD3", "_blank")}
+                >
+                  🌱 Start Investing with Acorns – $5 Bonus
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Acorns helps you turn your habit savings into real investments automatically.</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        </div>
       </div>
 
       <Card>
