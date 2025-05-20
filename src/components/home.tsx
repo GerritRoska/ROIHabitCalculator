@@ -47,30 +47,26 @@ const Home = () => {
         </CardContent>
       </Card>
 
-      <div className="mt-8 text-center text-sm">
+      <div className="mt-8 text-center text-sm px-4">
         <div className="mb-4 text-muted-foreground">
-          <div className="flex items-center justify-center gap-2">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2">
             <span>💸 Ready to turn your habit savings into real investments?</span>
             <a
               href="https://www.acorns.com/share/?first_name=Gerrit&shareable_code=QM3PVD3"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary hover:underline"
+              className="text-primary hover:underline whitespace-nowrap"
             >
-              Try Acorns + get $5 — it's what we recommend
+              Try Acorns + get $5
             </a>
           </div>
         </div>
-        <p className="text-muted-foreground">
+        <p className="text-muted-foreground max-w-2xl mx-auto">
           This calculator is for illustrative purposes only and does not
           guarantee actual investment results. Always consult with a financial
           advisor before making investment decisions.
         </p>
       </div>
-
-      <footer className="mt-12 text-center text-sm text-muted-foreground py-4 border-t border-border">
-        <p>© {new Date().getFullYear()} Investment Calculator. All rights reserved.</p>
-      </footer>
     </div>
   );
 };
