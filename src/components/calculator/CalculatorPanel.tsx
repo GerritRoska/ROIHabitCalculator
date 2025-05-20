@@ -618,7 +618,7 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({ className = "" }) => 
                         }
                       })()}
                     </h3>
-                    <p className="text-green-700">
+                    <p className="text-gray-900">
                       Acorns helps you invest that amount automatically — and grow it over time.
                     </p>
                     <p className="text-sm text-[#004b87] mt-2">
