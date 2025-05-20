@@ -576,23 +576,53 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({ className = "" }) => 
                 />
 
                 {/* Dynamic CTA Section */}
-                <div className="mt-8 mb-8 p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border border-green-100 animate-fade-in">
-                  <div className="text-center space-y-4">
+                <div className="mt-8 mb-8 p-8 rounded-xl bg-[#e8fbe7] shadow-[0_4px_12px_rgba(0,0,0,0.05)] text-center transition-all duration-300 max-w-[700px] mx-auto animate-fade-in">
+                  <div className="space-y-4">
+                    {showMultipleWeaknesses && weaknessList.length > 0 && (
+                      <p className="text-green-700 text-lg italic">
+                        {[
+                          "This isn't just spare change — it's your future working for you.",
+                          "Small choices add up. What could yours become?",
+                          "You're already halfway to building wealth. Now automate it."
+                        ][Math.floor(Math.random() * 3)]}
+                      </p>
+                    )}
                     <h3 className="text-xl sm:text-2xl font-semibold text-green-800">
-                      {showMultipleWeaknesses && weaknessList.length > 0 ? 
-                        `Your combined ${formatCurrency(weaknessData.cost)}/${weaknessData.frequency} + ${weaknessList.map(w => 
-                          `${formatCurrency(w.cost)}/${w.frequency}`).join(' + ')} habits could grow to ${formatCurrency(finalAmount)}` :
-                        `Your ${formatCurrency(weaknessData.cost)}/${weaknessData.frequency} ${selectedWeaknessType.replace('_', ' ')} habit could become ${formatCurrency(finalAmount)}`
-                      }
+                      {(() => {
+                        // Calculate costs based on frequency
+                        const calculatePeriodCost = (data: WeaknessData) => {
+                          const multiplier = 
+                            data.frequency === 'daily' ? 365 :
+                            data.frequency === 'weekly' ? 52 : 12;
+                          return data.cost * data.timesPerFrequency * multiplier;
+                        };
+
+                        if (showMultipleWeaknesses && weaknessList.length > 0) {
+                          // Calculate total annual cost
+                          const totalAnnualCost = [weaknessData, ...weaknessList]
+                            .reduce((sum, habit) => sum + calculatePeriodCost(habit), 0);
+                          
+                          // Convert to monthly if under $1000/year
+                          const useMonthly = totalAnnualCost < 1000;
+                          const displayAmount = useMonthly ? 
+                            totalAnnualCost / 12 : 
+                            totalAnnualCost;
+                          
+                          return `Your combined habits (~${formatCurrency(displayAmount)}/${useMonthly ? 'month' : 'year'}) could grow to ${formatCurrency(finalAmount)}`;
+                        } else {
+                          // Single habit calculation
+                          const periodCost = weaknessData.cost * weaknessData.timesPerFrequency;
+                          const habitName = WEAKNESS_OPTIONS.find(opt => opt.value === weaknessData.type)?.label.toLowerCase() || 'habit';
+                          
+                          return `Your ${formatCurrency(periodCost)}/${weaknessData.frequency} ${habitName} habit could become ${formatCurrency(finalAmount)}`;
+                        }
+                      })()}
                     </h3>
                     <p className="text-green-700">
-                      {showMultipleWeaknesses && weaknessList.length > 0 ?
-                        "Turn those small decisions into long-term wealth — Acorns can help." :
-                        "Acorns helps you invest that amount automatically — and grow it over time."
-                      }
+                      Acorns helps you invest that amount automatically — and grow it over time.
                     </p>
                     <Button
-                      className="bg-green-600 hover:bg-green-700 text-white border-0 shadow-sm"
+                      className="bg-[#1DB954] hover:bg-[#1a9d48] text-white font-bold px-6 py-3 rounded-lg shadow-sm"
                       onClick={() => window.open("https://www.acorns.com/share/?first_name=Gerrit&shareable_code=QM3PVD3", "_blank")}
                     >
                       🌱 Start Investing with Acorns →
