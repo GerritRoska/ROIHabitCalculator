@@ -2,9 +2,6 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import CalculatorPanel from "./calculator/CalculatorPanel";
-import { Button } from "@/components/ui/button";
-import { Sun, Moon, Share2 } from "lucide-react";
-import { useTheme } from "@/components/theme-provider";
 import ReferralButton from "./ReferralButton";
 
 const Home = () => {
