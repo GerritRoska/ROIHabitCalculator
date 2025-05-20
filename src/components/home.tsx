@@ -45,7 +45,7 @@ const Home = () => {
               <TooltipTrigger asChild>
                 <Button
                   variant="outline"
-                  className="bg-[#1DB954] hover:bg-[#1DB954]/90 text-white border-0"
+                  className="bg-blue-50 hover:bg-blue-100 text-blue-600 border border-blue-200"
                   onClick={() => window.open("https://www.acorns.com/share/?first_name=Gerrit&shareable_code=QM3PVD3", "_blank")}
                 >
                   🌱 Start Investing with Acorns – $5 Bonus
