@@ -105,32 +105,32 @@
   }
 
   .dark {
-    --background: 222 47% 8%;
+    --background: 222 47% 4%;
     --foreground: 210 40% 98%;
     
-    --card: 222 47% 4%;
+    --card: 220 40% 2%;
     --card-foreground: 210 40% 98%;
     
-    --popover: 222 47% 4%;
+    --popover: 220 40% 2%;
     --popover-foreground: 210 40% 98%;
     
     --primary: 217 91% 60%;
     --primary-foreground: 210 40% 98%;
     
-    --secondary: 217 32% 12%;
+    --secondary: 215 25% 12%;
     --secondary-foreground: 210 40% 98%;
     
-    --muted: 217 32% 12%;
-    --muted-foreground: 210 40% 98%;
+    --muted: 215 25% 12%;
+    --muted-foreground: 217 91% 60%;
     
-    --accent: 217 32% 14%;
+    --accent: 215 25% 12%;
     --accent-foreground: 210 40% 98%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
     
-    --border: 217 32% 18%;
-    --input: 217 32% 18%;
+    --border: 215 25% 8%;
+    --input: 215 25% 8%;
     --ring: 224 76% 48%;
 
     --radius: 0.5rem;
