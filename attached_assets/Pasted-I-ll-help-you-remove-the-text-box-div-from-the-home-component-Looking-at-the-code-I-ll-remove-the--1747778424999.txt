@@ -1,0 +1,68 @@
+I'll help you remove the text box div from the home component. Looking at the code, I'll remove the text paragraph about habit savings and Acorns at the bottom:
+
+src/components/home.tsx
+Reverted
+Remove bottom text box
+Assistant automatically restarted your App after applying file changes. You can disable this behavior in 
+.
+Checkpoint made
+Reverted
+Remove bottom text box, keep copyright notice
+2 minutes ago
+•
+okay I wnat to explain how to remove this include the text in it can you hlpe me
+
+div
+GR
+
+gerritroska
+Assistant
+just now
+To remove the text box from the Home component, you'll need to edit the JSX markup. Specifically, you'll be focusing on removing the div containing the text elements you no longer want to display.
+
+Here is how you can modify the Home component:
+
+Locate the section of the code where the text box div is defined, which is currently within the render function of the Home component.
+Remove the entire div that includes the unnecessary text.
+Here's an example of what your updated code might look like after removing the specific div:
+
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Share2 } from "lucide-react";
+// ... other imports ...
+const Home = () => {
+  const handleShare = async () => {
+    try {
+      await navigator.share({
+        title: 'Habit ROI Calculator',
+        text: 'Calculate how much your habits could be worth if invested!',
+        url: window.location.href
+      });
+    } catch (err) {
+      console.log('Share failed:', err);
+    }
+  };
+  return (
+    <div className="container mx-auto py-8 px-4">
+      <div className="absolute top-4 right-4">
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={handleShare}
+        >
+          <Share2 className="h-5 w-5" />
+        </Button>
+      </div>
+      {/* Removed the entire text box div */}
+      <Card>
+        <CardContent>
+          {/* Other content goes here */}
+        </CardContent>
+      </Card>
+      <p className="text-xs text-muted-foreground text-center mt-8">© 2025 Investment Calculator</p>
+    </div>
+  );
+};
+export default Home;
+In this update, the specific div containing the unwanted text has been removed. Ensure to keep other relevant parts of the component intact so that it continues to function as intended
