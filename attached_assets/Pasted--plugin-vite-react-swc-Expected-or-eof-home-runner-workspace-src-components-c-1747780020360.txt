@@ -1,0 +1,227 @@
+[plugin:vite:react-swc] × Expected ';', '}' or <eof>
+     ╭─[/home/runner/workspace/src/components/calculator/CalculatorPanel.tsx:684:1]
+ 681 │     };
+ 682 │     
+ 683 │     export default CalculatorPanel;
+ 684 │ ╭─▶ ```import React, { useState } from "react";
+ 685 │ │   import { Card, CardContent } from "../ui/card";
+ 686 │ │   import { Slider } from "@/components/ui/slider";
+ 687 │ │   import { Label } from "@/components/ui/label";
+ 688 │ │   import { Switch } from "@/components/ui/switch";
+ 689 │ │   import { Button } from "@/components/ui/button";
+ 690 │ │   import { Separator } from "@/components/ui/separator";
+ 691 │ │   import { Calendar, TrendingUp, Percent, Coffee, Utensils, Film, Beer, ShoppingBag } from "lucide-react";
+ 692 │ │   import InvestmentMilestones from "./InvestmentMilestones";
+ 693 │ │   import InvestmentChart from "./InvestmentChart";
+ 694 │ │   import SummaryCards from "./SummaryCards";
+ 695 │ │   import CoffeeCalculator, { WeaknessData } from "./CoffeeCalculator";
+ 696 │ │   
+ 697 │ │   interface CalculatorPanelProps {
+ 698 │ │       className?: string;
+ 699 │ │   }
+ 700 │ │   
+ 701 │ │   const WEAKNESS_OPTIONS = [
+ 702 │ │       {
+ 703 │ │           value: "coffee",
+ 704 │ │           label: "Coffee",
+ 705 │ │           icon: Coffee,
+ 706 │ │           description: "That morning brew that keeps you functioning like a human",
+ 707 │ │           color: "bg-amber-100 text-amber-800",
+ 708 │ │       },
+ 709 │ │       {
+ 710 │ │           value: "eating_out",
+ 711 │ │           label: "Eating Out",
+ 712 │ │           icon: Utensils,
+ 713 │ │           description: "Because cooking is hard and delivery apps are easy",
+ 714 │ │           color: "bg-red-100 text-red-800",
+ 715 │ │       },
+ 716 │ │       {
+ 717 │ │           value: "movies",
+ 718 │ │           label: "Movies",
+ 719 │ │           icon: Film,
+ 720 │ │           description: "Your regular escape into other worlds (with overpriced popcorn)",
+ 721 │ │           color: "bg-blue-100 text-blue-800",
+ 722 │ │       },
+ 723 │ │       {
+ 724 │ │           value: "drinks",
+ 725 │ │           label: "Drinks",
+ 726 │ │           icon: Beer,
+ 727 │ │           description: "Those social lubricants that make you think you can dance",
+ 728 │ │           color: "bg-yellow-100 text-yellow-800",
+ 729 │ │       },
+ 730 │ │       {
+ 731 │ │           value: "shopping",
+ 732 │ │           label: "Shopping",
+ 733 │ │           icon: ShoppingBag,
+ 734 │ │           description: "Things you absolutely 'need' according to targeted ads",
+ 735 │ │           color: "bg-pink-100 text-pink-800",
+ 736 │ │       },
+ 737 │ │   ];
+ 738 │ │   
+ 739 │ │   const CalculatorPanel: React.FC<CalculatorPanelProps> = ({ className = "" }) => {
+ 740 │ │       const [initialInvestment, setInitialInvestment] = useState<number>(0);
+ 741 │ │       const [monthlyContribution, setMonthlyContribution] = useState<number>(0);
+ 742 │ │       const [timeYears, setTimeYears] = useState<number>(20);
+ 743 │ │       const [returnRate, setReturnRate] = useState<number>(7);
+ 744 │ │       const [inflationRate, setInflationRate] = useState<number>(2.5);
+ 745 │ │       const [showRealReturns, setShowRealReturns] = useState<boolean>(false);
+ 746 │ │       const [currentAge, setCurrentAge] = useState<number>(30);
+ 747 │ │       const [retirementAge, setRetirementAge] = useState<number>(65);
+ 748 │ │       const [weaknessData, setWeaknessData] = useState<WeaknessData>({
+ 749 │ │           id: crypto.randomUUID(),
+ 750 │ │           type: "coffee",
+ 751 │ │           cost: 5,
+ 752 │ │           frequency: "daily",
+ 753 │ │           timesPerFrequency: 1,
+ 754 │ │       });
+ 755 │ │       const [weaknessList, setWeaknessList] = useState<WeaknessData[]>([]);
+ 756 │ │       const [showMultipleWeaknesses, setShowMultipleWeaknesses] = useState<boolean>(false);
+ 757 │ │   
+ 758 │ │       const calculateInvestmentGrowth = () => {
+ 759 │ │           const data = [];
+ 760 │ │           const yearsUntilRetirement = Math.max(0, retirementAge - currentAge);
+ 761 │ │           const calculationPeriod = Math.max(timeYears, yearsUntilRetirement);
+ 762 │ │   
+ 763 │ │           const getAnnualWeaknessSavings = (weakness: WeaknessData) => {
+ 764 │ │               const { cost, timesPerFrequency, frequency } = weakness;
+ 765 │ │               const frequencyMultiplier = frequency === "daily" ? 365 : frequency === "weekly" ? 52 : 12;
+ 766 │ │               return cost * timesPerFrequency * frequencyMultiplier;
+ 767 │ │           };
+ 768 │ │   
+ 769 │ │           let annualWeaknessSavings = getAnnualWeaknessSavings(weaknessData);
+ 770 │ │   
+ 771 │ │           if (showMultipleWeaknesses && weaknessList.length > 0) {
+ 772 │ │               weaknessList.forEach((weakness) => {
+ 773 │ │                   annualWeaknessSavings += getAnnualWeaknessSavings(weakness);
+ 774 │ │               });
+ 775 │ │           }
+ 776 │ │   
+ 777 │ │           const monthlyWeaknessSavings = annualWeaknessSavings / 12;
+ 778 │ │           const effectiveMonthlyContribution = monthlyContribution + monthlyWeaknessSavings;
+ 779 │ │           const monthlyNominalRate = Math.pow(1 + returnRate / 100, 1 / 12) - 1;
+ 780 │ │           const monthlyInflationRate = Math.pow(1 + inflationRate / 100, 1 / 12) - 1;
+ 781 │ │           const monthlyRealRate = (1 + monthlyNominalRate) / (1 + monthlyInflationRate) - 1;
+ 782 │ │   
+ 783 │ │           let nominalBalance = initialInvestment;
+ 784 │ │           let realBalance = initialInvestment;
+ 785 │ │   
+ 786 │ │           for (let year = 0; year <= calculationPeriod; year++) {
+ 787 │ │               if (year > 0) {
+ 788 │ │                   const months = year * 12;
+ 789 │ │                   nominalBalance =
+ 790 │ │                       initialInvestment * Math.pow(1 + monthlyNominalRate, months) +
+ 791 │ │                       effectiveMonthlyContribution *
+ 792 │ │                       ((Math.pow(1 + monthlyNominalRate, months) - 1) / monthlyNominalRate);
+ 793 │ │   
+ 794 │ │                   realBalance =
+ 795 │ │                       initialInvestment * Math.pow(1 + monthlyRealRate, months) +
+ 796 │ │                       effectiveMonthlyContribution * ((Math.pow(1 + monthlyRealRate, months) - 1) / monthlyRealRate);
+ 797 │ │               }
+ 798 │ │   
+ 799 │ │               const baseContribution = initialInvestment + monthlyContribution * 12 * year;
+ 800 │ │               const weaknessContribution = monthlyWeaknessSavings * 12 * year;
+ 801 │ │               const totalContribution = baseContribution + weaknessContribution;
+ 802 │ │   
+ 803 │ │               data.push({
+ 804 │ │                   year,
+ 805 │ │                   value: Math.round(nominalBalance),
+ 806 │ │                   realValue: Math.round(realBalance),
+ 807 │ │                   contribution: baseContribution,
+ 808 │ │                   weaknessContribution,
+ 809 │ │                   totalContribution: totalContribution,
+ 810 │ │               });
+ 811 │ │           }
+ 812 │ │   
+ 813 │ │           return data;
+ 814 │ │       };
+ 815 │ │   
+ 816 │ │       const investmentData = calculateInvestmentGrowth();
+ 817 │ │       const yearsUntilRetirement = Math.max(0, retirementAge - currentAge);
+ 818 │ │       const calculationPeriod = Math.max(timeYears, yearsUntilRetirement);
+ 819 │ │       const dataIndex = Math.min(yearsUntilRetirement, investmentData.length - 1);
+ 820 │ │   
+ 821 │ │       const finalAmount = showRealReturns ? investmentData[dataIndex].realValue : investmentData[dataIndex].value;
+ 822 │ │       const totalContributions = investmentData[dataIndex].totalContribution;
+ 823 │ │       const weaknessContribution = investmentData[dataIndex].weaknessContribution || 0;
+ 824 │ │       const interestEarned = finalAmount - totalContributions;
+ 825 │ │   
+ 826 │ │       const calculateWeaknessMetrics = () => {
+ 827 │ │           if (showMultipleWeaknesses && weaknessList.length > 0) {
+ 828 │ │               const totalWeaknessCount = weaknessList.length + 1;
+ 829 │ │   
+ 830 │ │               const getAnnualWeaknessSavings = (weakness: WeaknessData) => {
+ 831 │ │                   const { cost, timesPerFrequency, frequency } = weakness;
+ 832 │ │                   const frequencyMultiplier = frequency === "daily" ? 365 : frequency === "weekly" ? 52 : 12;
+ 833 │ │                   return cost * timesPerFrequency * frequencyMultiplier;
+ 834 │ │               };
+ 835 │ │   
+ 836 │ │               let totalAnnualSavings = getAnnualWeaknessSavings(weaknessData);
+ 837 │ │   
+ 838 │ │               const getItemCount = (weakness: WeaknessData) => {
+ 839 │ │                   const { timesPerFrequency, frequency } = weakness;
+ 840 │ │                   const frequencyMultiplier = frequency === "daily" ? 365 : frequency === "weekly" ? 52 : 12;
+ 841 │ │                   const actualYears = Math.min(yearsUntilRetirement, calculationPeriod);
+ 842 │ │                   return timesPerFrequency * frequencyMultiplier * actualYears;
+ 843 │ │               };
+ 844 │ │   
+ 845 │ │               let totalItemCount = getItemCount(weaknessData);
+ 846 │ │   
+ 847 │ │               weaknessList.forEach((weakness) => {
+ 848 │ │                   totalAnnualSavings += getAnnualWeaknessSavings(weakness);
+ 849 │ │                   totalItemCount += getItemCount(weakness);
+ 850 │ │               });
+ 851 │ │   
+ 852 │ │               const averageCost = totalAnnualSavings / totalWeaknessCount;
+ 853 │ │   
+ 854 │ │               return {
+ 855 │ │                   cost: averageCost,
+ 856 │ │                   itemCount: Math.floor(totalItemCount),
+ 857 │ │                   type: "items",
+ 858 │ │                   isMultiple: true,
+ 859 │ │               };
+ 860 │ │           } else {
+ 861 │ │               const { cost, timesPerFrequency, frequency, type } = weaknessData;
+ 862 │ │               const frequencyMultiplier = frequency === "daily" ? 365 : frequency === "weekly" ? 52 : 12;
+ 863 │ │               const actualYears = Math.min(yearsUntilRetirement, calculationPeriod);
+ 864 │ │               const itemCount = Math.floor(timesPerFrequency * frequencyMultiplier * actualYears);
+ 865 │ │   
+ 866 │ │               const weaknessType =
+ 867 │ │                   type === "coffee"
+ 868 │ │                       ? "coffees"
+ 869 │ │                       : type === "eating_out"
+ 870 │ │                           ? "meals"
+ 871 │ │                           : type === "movies"
+ 872 │ │                               ? "movie tickets"
+ 873 │ │                               : type === "drinks"
+ 874 │ │                                   ? "drinks"
+ 875 │ │                                   : "items";
+ 876 │ │               return { cost, itemCount, type: weaknessType, isMultiple: false };
+ 877 │ │           }
+ 878 │ │       };
+ 879 │ │   
+ 880 │ │       const { cost, itemCount, type: selectedWeaknessType, isMultiple } = calculateWeaknessMetrics();
+ 881 │ │   
+ 882 │ │       const formatCurrency = (value: number) => {
+ 883 │ │           return new Intl.NumberFormat("en-US", {
+ 884 │ │               style: "currency",
+ 885 │ │               currency: "USD",
+ 886 │ │               maximumFractionDigits: 0,
+ 887 │ │           }).format(value);
+ 888 │ │       };
+ 889 │ │   
+ 890 │ │       return (
+ 891 │ │           <Card
+ 892 │ ├─▶             className={`bg-gradient-to-br from-background to-accent/5 dark:from-background dark:to-accent/10 p-3 sm:p-5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 mx-auto max-w-full border-0 will-change-transform ${className}`}
+     · ╰───                        ──
+     · ╰──── This is the expression part of an expression statement
+ 893 │             >
+ 894 │                 <CardContent className="p-0">
+ 895 │                     <div className="flex flex-col space-y-3 sm:space-y-4">
+     ╰────
+
+
+Caused by:
+    Syntax Error
+/home/runner/workspace/src/components/calculator/CalculatorPanel.tsx
+Click outside, press Esc key, or fix the code to dismiss.
+You can also disable this overlay by setting server.hmr.overlay to false in vite.config.ts.
