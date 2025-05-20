@@ -1,0 +1,93 @@
+🔧 Recommended Improvements for Claude (Replit/Tempo Labs)
+1. Add a Call-to-Action Footer Section
+Why: Currently the Acorns link appears once and can be easily missed.
+What to do:
+
+Add a persistent but non-intrusive footer CTA:
+
+“💸 Ready to turn your habit savings into real investments? Try Acorns + get $5 — it’s what we recommend.”
+
+Place it just above the copyright line.
+
+Claude prompt:
+
+vbnet
+Copy
+Edit
+Please add a subtle footer section with the following centered text, using smaller font and light gray background. Place it just above the copyright:
+💸 Ready to turn your habit savings into real investments? 
+<a href="https://www.acorns.com/share/?first_name=Gerrit&shareable_code=QM3PVD3" target="_blank">Try Acorns + get $5 — it’s what we recommend</a>
+2. Add a Tooltip or Info Icon Explaining Acorns
+Why: Subtle education builds trust. Let people know why this tool recommends Acorns.
+Where: Next to the “Start Investing with Acorns ($5 Bonus)” button.
+What to say:
+
+“Acorns automatically invests your spare change and habit savings into diversified portfolios — perfect for consistent long-term growth.”
+
+Claude prompt:
+
+vbnet
+Copy
+Edit
+Add a small info icon (ℹ️) next to the 'Start Investing with Acorns' button. When hovered or clicked, show this tooltip:
+“Acorns automatically invests your spare change and habit savings into diversified portfolios — perfect for consistent long-term growth.”
+3. Add Optional Email Capture for Investment Tips
+Why: Begin building a user list with minimal effort.
+Suggested location: Right after “Investment Summary” or under the final milestone section.
+Text idea:
+
+“Want monthly tips on turning your habits into long-term wealth? Drop your email here.”
+
+Claude prompt:
+
+pgsql
+Copy
+Edit
+Add a simple email input field with a button that says 'Send Me Tips'. 
+Place it beneath the 'Investment Summary' section, styled to match the app. No popups or required submission — optional only.
+4. Dark Mode Toggle (Optional but Nice)
+Why: UX bonus, especially for mobile and night readers.
+Claude prompt:
+
+pgsql
+Copy
+Edit
+Add a light/dark mode toggle switch at the top right near the share icon. Use local storage to remember the user’s preference.
+5. Make ROI Results Sharable
+Why: Boosts virality. Let users share their result summary.
+Where: Under the “Final Amount” card or beside the export summary button.
+Claude prompt:
+
+pgsql
+Copy
+Edit
+Add a 'Share My Results' button next to the 'Export Summary' button. When clicked, generate a short URL (or allow them to copy a formatted summary like: "I saved $63K and earned $196K by skipping coffee for 35 years — try it yourself!") with a link back to the app.
+📍 Acorns Link Placement Guide (Subtle but Effective)
+✅ Where to Place:
+Top of the Page (already done well)
+✅ Keep the green “Start Investing” button.
+
+Footer CTA (recommended)
+
+Just above © 2025 Investment Calculator
+
+Keep it styled lightly and informative.
+
+Inside the "Fun Fact" Blurb
+
+Add:
+
+“Want to actually invest it? Acorns makes it automatic →”
+
+Add an “Invest Now” Button at the End
+
+After milestones:
+
+“🔥 You've avoided 12,775 coffees. Ready to put that to work? [Start investing] with Acorns.”
+
+✨ Optional Upgrades for Later
+Export to PDF with shareable insights.
+
+Toggle between different types of spending (coffee, fast food, etc.).
+
+API integration to pull in live Acorns performance data.
