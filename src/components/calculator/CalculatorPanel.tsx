@@ -286,7 +286,7 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({ className = "" }) => 
                     htmlFor="multiple-weaknesses"
                     className="text-sm sm:text-base font-medium"
                   >
-                    Combine multiple weaknesses
+                    Combine multiple Habits
                   </Label>
                 </div>
               </div>
