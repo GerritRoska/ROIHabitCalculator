@@ -20,17 +20,19 @@ const Home = () => {
 
   return (
     <div className="container mx-auto py-8 px-4">
-      <div className="absolute top-8 right-4 flex items-center gap-4 py-6">
-        <div className="animate-bounce-fade-in opacity-0 animation-delay-500 text-sm text-muted-foreground">
-          Share with friends! →
+      <div className="flex justify-end mb-4">
+        <div className="flex items-center gap-4">
+          <div className="animate-bounce-fade-in opacity-0 animation-delay-500 text-sm text-muted-foreground">
+            Share with friends! →
+          </div>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={handleShare}
+          >
+            <Share2 className="h-5 w-5" />
+          </Button>
         </div>
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={handleShare}
-        >
-          <Share2 className="h-5 w-5" />
-        </Button>
       </div>
 
       <div className="flex flex-col items-center gap-4 mb-8">
