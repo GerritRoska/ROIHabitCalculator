@@ -442,6 +442,7 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({ className = "" }) => 
                       >
                         <TrendingUp className="h-4 w-4 mr-2" />
                         Return Rate: {returnRate}%
+                        <span className="ml-2 text-xs text-muted-foreground">(S&P 500 historical avg: 10%)</span>
                       </Label>
                     </div>
                     <Slider
