@@ -629,7 +629,7 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({ className = "" }) => 
                       </span>
                     </p>
                     <Button
-                      className="bg-gradient-to-r from-primary to-accent text-white font-bold px-6 py-3 rounded-lg shadow-sm hover:opacity-90 transition-opacity"
+                      className="bg-gradient-to-r from-primary to-accent text-white font-bold px-4 sm:px-6 py-2 sm:py-3 rounded-lg shadow-sm hover:opacity-90 transition-opacity w-full sm:w-auto text-sm sm:text-base whitespace-normal sm:whitespace-nowrap"
                       onClick={() => window.open("https://www.acorns.com/share/?first_name=Gerrit&shareable_code=QM3PVD3", "_blank")}
                     >
                       🌱 Start Investing with Acorns — Get $5 Bonus →
