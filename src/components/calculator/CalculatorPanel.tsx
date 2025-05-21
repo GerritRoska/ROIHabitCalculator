@@ -54,7 +54,7 @@ const WEAKNESS_OPTIONS = [
   },
 ];
 
-const CalculatorPanel: React.FC<CalculatorPanelProps> = ({ className = "" }) => {
+const CalculatorPanel = React.memo(({ className = "" }: { className?: string }) => {
   const [initialInvestment, setInitialInvestment] = useState<number>(0);
   const [monthlyContribution, setMonthlyContribution] = useState<number>(0);
   const [timeYears, setTimeYears] = useState<number>(20);
@@ -660,6 +660,6 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({ className = "" }) => 
       </CardContent>
     </Card>
   );
-};
+});
 
 export default CalculatorPanel;

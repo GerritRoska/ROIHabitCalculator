@@ -25,13 +25,7 @@ const Home = () => {
           <div className="animate-bounce-fade-in opacity-0 animation-delay-500 text-sm text-muted-foreground">
             Share with friends! →
           </div>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={handleShare}
-          >
-            <Share2 className="h-5 w-5" />
-          </Button>
+          <ShareButton />
         </div>
       </div>
 
