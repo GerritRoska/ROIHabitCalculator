@@ -20,7 +20,7 @@ const Home = () => {
 
   return (
     <div className="container mx-auto py-8 px-4">
-      <div className="absolute top-8 right-4 flex items-center gap-2 py-4">
+      <div className="absolute top-4 right-4 flex items-center gap-2">
         <div className="animate-bounce-fade-in opacity-0 animation-delay-500 text-sm text-muted-foreground">
           Share with friends! →
         </div>
