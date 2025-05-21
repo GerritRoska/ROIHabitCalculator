@@ -11,7 +11,7 @@ const Home = () => {
       await navigator.share({
         title: 'Habit ROI Calculator',
         text: 'Calculate how much your habits could be worth if invested!',
-        url: 'https://roi-habit-calulator.netlify.app/'
+        url: window.location.href
       });
     } catch (err) {
       console.log('Share failed:', err);
