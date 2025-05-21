@@ -10,6 +10,8 @@ import InvestmentMilestones from "./InvestmentMilestones";
 import InvestmentChart from "./InvestmentChart";
 import SummaryCards from "./SummaryCards";
 import CoffeeCalculator, { WeaknessData } from "./CoffeeCalculator";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAcorn } from '@fortawesome/free-solid-svg-icons';
 
 interface CalculatorPanelProps {
   className?: string;
@@ -237,6 +239,30 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({ className = "" }) => 
                   </svg>
                 </a>
               </div>
+
+              <div className="flex items-center gap-1.5">
+                <span >
+                  Invest with Acorns
+                </span>
+                 <a
+                  href="https://www.acorns.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-800 transition-colors inline-flex items-center"
+                  aria-label="Invest with Acorns"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.open(
+                      "https://www.acorns.com/",
+                      "_blank",
+                      "noopener,noreferrer"
+                    );
+                  }}
+                >
+                   <FontAwesomeIcon icon={faAcorn} className="w-4 h-4" />
+                </a>
+              </div>
+
               <div className="flex items-center gap-1.5">
                 <span>Inspired by Jack Skywalker's blog</span>
                 <a
