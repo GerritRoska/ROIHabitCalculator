@@ -57,7 +57,7 @@ const Home = () => {
             >
               🌱 Try Acorns + Get $5 Bonus
             </Button>
-            <p className="text-sm text-muted-foreground mt-2">
+            <p className="text-sm text-blue-600 mt-2">
               That $5 could grow into $226.30 in 40 years (at a 10% average return) 😉
             </p>
           </div>
