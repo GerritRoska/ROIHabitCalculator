@@ -1,0 +1,85 @@
+ChatGPT said:
+Great question — let’s clear it up in simple steps:
+
+✅ What You're Trying to Do:
+You want the link to your Netlify site (e.g. https://roi-habit-calculator.netlify.app) to:
+
+Show a clean, custom preview (image, title, description)
+
+Work automatically when someone shares it on:
+
+LinkedIn
+
+iMessage
+
+Slack
+
+Twitter
+
+etc.
+
+🧠 How Netlify Handles Link Previews
+✅ Yes — it will show a preview if:
+You’ve added the correct Open Graph metadata to your public/index.html file
+
+Your preview image is publicly accessible (hosted at a real URL like /og-image.jpg)
+
+Once you deploy your project through Netlify, anyone who pastes that link (even in a text message or LinkedIn post) will see the preview — as long as it’s properly set up.
+
+✅ What You Need to Do (Step-by-Step on Netlify)
+🔧 STEP 1: Add the Open Graph Tags
+In your React project:
+
+Go to your public/index.html file
+
+Inside the <head> section, paste this:
+
+html
+Copy
+Edit
+<!-- Open Graph (OG) Preview Tags -->
+<meta property="og:title" content="Habit ROI Calculator – Turn Coffee Into $1M" />
+<meta property="og:description" content="See how your small habits (like coffee) could grow into real wealth over time." />
+<meta property="og:image" content="https://roi-habit-calculator.netlify.app/og-image.jpg" />
+<meta property="og:url" content="https://roi-habit-calculator.netlify.app" />
+<meta name="twitter:card" content="summary_large_image" />
+🖼 STEP 2: Add the Image
+Upload your image (e.g. og-image.jpg) into your /public folder in your project
+
+That file will be served at:
+
+arduino
+Copy
+Edit
+https://roi-habit-calculator.netlify.app/og-image.jpg
+You can test it by visiting that link after deploying.
+
+🚀 STEP 3: Deploy to Netlify
+If you’ve already connected your GitHub repo to Netlify:
+
+Just push your changes
+
+Netlify will redeploy automatically with the new metadata + image
+
+Or you can drag-and-drop your entire dist/ or build/ folder to the Netlify drop deploy tool.
+
+🧪 STEP 4: Test the Preview
+Paste your link into:
+
+https://www.opengraph.xyz/
+
+LinkedIn post editor (you'll see the card generate live)
+
+Twitter card validator: cards-dev.twitter.com/validator
+
+✅ To Your Question: Will It “Automatically Upload”?
+No — you have to manually add the tags and image once.
+
+But yes, once deployed on Netlify, the preview will show automatically when shared anywhere — even if someone texts the link.
+
+✅ Summary
+You want to do…	Do this on Netlify
+Show custom preview on share	Add OG tags in public/index.html
+Make sure preview image loads	Place image in /public, link to it
+Deploy it	Push to GitHub or drag-drop to Netlify
+Preview it	Use LinkedIn or opengraph.xyz
