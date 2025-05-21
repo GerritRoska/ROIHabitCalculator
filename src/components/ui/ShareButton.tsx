@@ -19,7 +19,7 @@ interface ShareButtonProps {
 const ShareButton = ({
   title = 'Habit ROI Calculator – Turn Coffee Into $1M',
   text = 'See how your small habits (like coffee) could grow into real wealth over time.',
-  url = window.location.href,
+  url = 'https://roi-habit-calulator.netlify.app/',
   className = ''
 }: ShareButtonProps) => {
   const shareToFacebook = () => {
