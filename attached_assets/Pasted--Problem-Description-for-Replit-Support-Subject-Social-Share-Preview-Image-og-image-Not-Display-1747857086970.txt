@@ -1,0 +1,59 @@
+📄 Problem Description for Replit Support
+Subject:
+Social Share Preview Image (og:image) Not Displaying When Deployed via Replit
+
+Description:
+I have correctly set up my HTML meta tags for Open Graph and Twitter social sharing, including an og:image tag pointing to a public image (for use on LinkedIn, Facebook, Twitter, and iMessage). This works perfectly when deployed on Netlify or similar static hosts. However, when I deploy my app on Replit, social platforms do not show the preview image (even though the tags are present and correct).
+
+Technical Details:
+
+My <head> contains meta tags like:
+
+html
+Copy
+Edit
+<meta property="og:image" content="https://[my-replit-url]/social-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+The image is present in the public/ directory of my Replit project and accessible at
+https://[my-replit-url]/social-preview.png
+
+The Problem:
+
+When sharing the site link, no image preview appears on social platforms or messaging apps (LinkedIn, Twitter, iMessage, Facebook, etc.).
+
+I confirmed that:
+
+The image URL loads in my browser.
+
+The meta tags are correct and in the <head>.
+
+The same setup works when deployed to Netlify.
+
+But link previews still fail on Replit deployments.
+
+Suspected Cause:
+
+It appears that Replit’s hosting does not serve static files in a way that allows social media crawlers/bots (such as Facebook’s or LinkedIn’s) to fetch the image, even if the file is technically reachable in a browser.
+
+This could be due to:
+
+Bot/crawler user-agent blocking
+
+Non-standard HTTP headers
+
+Slow response time to crawlers
+
+Image files behind authentication or some middleware
+
+Dynamic routing interfering with file access
+
+What I Need:
+
+Can you confirm whether Replit supports direct, unauthenticated, static file serving for social media link preview crawlers (for both the root URL and files like /social-preview.png)?
+
+If not, is there a documented workaround or hosting configuration I can use to ensure og:image is accessible for social link previews?
+
+Thank you!
+Let me know if you need more specifics or a link to my live Replit project.
+
