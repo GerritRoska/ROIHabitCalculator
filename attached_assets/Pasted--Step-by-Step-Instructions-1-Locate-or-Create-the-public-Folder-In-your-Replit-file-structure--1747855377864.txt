@@ -1,0 +1,62 @@
+🔧 Step-by-Step Instructions
+1. Locate or Create the public/ Folder
+In your Replit file structure:
+
+If you already have a public/ folder → use it.
+
+If not → create a folder named exactly:
+public
+
+This folder is exposed as the root of your deployed site. So anything inside it will be available like https://your-site.com/social-preview.png.
+
+2. Upload the Preview Image
+You now have a working image (we generated it earlier). Here's what to do:
+
+Save that image to your computer (if you haven't already).
+
+Drag it into the public/ folder in your Replit project.
+
+Name it:
+social-preview.png
+
+3. Update Your Meta Tags
+In your index.html (or wherever your <head> is), use this cleaned-up version:
+
+html
+Copy
+Edit
+<!-- Primary Meta Tags -->
+<title>Habit ROI Calculator – Turn Coffee Into $1M</title>
+<meta name="title" content="Habit ROI Calculator – Turn Coffee Into $1M">
+<meta name="description" content="See how your small habits (like coffee) could grow into real wealth over time.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://replit.com/@gerritroska/ROIHabitCalculator">
+<meta property="og:title" content="Habit ROI Calculator – Turn Coffee Into $1M">
+<meta property="og:description" content="See how your small habits (like coffee) could grow into real wealth over time.">
+<meta property="og:image" content="https://replit.com/@gerritroska/ROIHabitCalculator/public/social-preview.png">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Habit ROI Calculator – Turn Coffee Into $1M">
+<meta name="twitter:description" content="See how your small habits (like coffee) could grow into real wealth over time.">
+<meta name="twitter:image" content="https://replit.com/@gerritroska/ROIHabitCalculator/public/social-preview.png">
+4. Redeploy or Refresh Your Replit App
+Just running the app in Replit may not be enough — make sure your project is publicly accessible:
+
+Try visiting the Replit-hosted preview link directly.
+
+Ensure the image URL works like this:
+https://replit.com/@gerritroska/ROIHabitCalculator/public/social-preview.png
+
+⚠️ If that URL still gives a 404: You likely need to expose the public/ folder through your Vite/Express config. Let me know if you need help with that!
+
+5. Test the Preview
+Use:
+
+LinkedIn Post Inspector
+
+Twitter Card Validator
+
+Paste your project URL and confirm the image shows up.

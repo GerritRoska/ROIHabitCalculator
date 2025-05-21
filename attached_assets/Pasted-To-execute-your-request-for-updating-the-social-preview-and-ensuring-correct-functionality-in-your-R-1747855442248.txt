@@ -1,0 +1,44 @@
+To execute your request for updating the social preview and ensuring correct functionality in your Replit project, follow these structured steps:
+
+Step 1: Ensure public/ Folder Exists
+Verify that you have a public/ folder in your Replit file structure, as this is essential for hosting static files like images.
+
+Step 2: Upload the Preview Image
+Drag and drop the social-preview.png image file into the public/ folder. This image will be accessible via the URL:
+
+https://roi-habit-calculator.netlify.app/social-preview.png
+Step 3: Update Your Meta Tags in index.html
+Edit your index.html file to ensure the meta tags correctly reference the image and essential details for social sharing. Use the following cleaned-up version:
+
+<!-- Primary Meta Tags -->
+<title>Habit ROI Calculator – Turn Coffee Into $1M</title>
+<meta name="title" content="Habit ROI Calculator – Turn Coffee Into $1M">
+<meta name="description" content="See how your small habits (like coffee) could grow into real wealth over time.">
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://roi-habit-calculator.netlify.app/">
+<meta property="og:title" content="Habit ROI Calculator – Turn Coffee Into $1M">
+<meta property="og:description" content="See how your small habits (like coffee) could grow into real wealth over time.">
+<meta property="og:image" content="https://roi-habit-calculator.netlify.app/social-preview.png">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Habit ROI Calculator – Turn Coffee Into $1M">
+<meta name="twitter:description" content="See how your small habits (like coffee) could grow into real wealth over time.">
+<meta name="twitter:image" content="https://roi-habit-calculator.netlify.app/social-preview.png">
+Step 4: Redeploy Your Replit App
+Ensure that your project is publicly accessible and test the URLs:
+
+Visit the Replit-hosted preview link directly.
+You may also want to confirm that the image is accessible at:
+
+https://roi-habit-calculator.netlify.app/social-preview.png
+If you receive a 404 error, make sure you’ve followed the public folder structure.
+
+Step 5: Test the Preview
+Utilize tools such as:
+
+LinkedIn Post Inspector
+Twitter Card Validator
+Paste your project URL and confirm the image shows up correctly.
+
+These steps will guide advanced users on any necessary actions to take. Let me know if you need further modifications or help!
