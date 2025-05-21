@@ -10,7 +10,7 @@ Instead of just showing “what you save,” it shows **what you could grow** �
 
 ## 🎯 Try the Live Demo
 
-🔗 [Use the Habit ROI Calculator](roi-habit-calulator.netlify.app/)  
+🔗 [Use the Habit ROI Calculator](roi-habit-calulator.netlify.app/) 
 🌱 [Start investing with Acorns — Get $5 bonus](https://www.acorns.com/share/?first_name=Gerrit&shareable_code=QM3PVD3)
 
 ---
