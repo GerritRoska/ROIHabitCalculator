@@ -10,11 +10,7 @@ import InvestmentMilestones from "./InvestmentMilestones";
 import InvestmentChart from "./InvestmentChart";
 import SummaryCards from "./SummaryCards";
 import CoffeeCalculator, { WeaknessData } from "./CoffeeCalculator";
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSeedling } from '@fortawesome/free-solid-svg-icons';
-
-library.add(faAcorn);
+import { DollarSign } from 'lucide-react';
 
 interface CalculatorPanelProps {
   className?: string;
@@ -262,7 +258,7 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({ className = "" }) => 
                     );
                   }}
                 >
-                   <FontAwesomeIcon icon={faSeedling} className="w-4 h-4" />
+                   <DollarSign className="w-4 h-4" />
                 </a>
               </div>
 
