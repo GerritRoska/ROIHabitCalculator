@@ -1,3 +1,4 @@
+
 modules = ["nodejs-20", "web"]
 run = "npm run dev"
 
@@ -6,6 +7,17 @@ channel = "stable-24_05"
 
 [deployment]
 run = ["sh", "-c", "npm run dev"]
+public = true
+
+[[deployment.responseHeaders]]
+path = "/*"
+name = "Access-Control-Allow-Origin"
+value = "*"
+
+[[deployment.responseHeaders]]
+path = "/social-preview.png"
+name = "Cache-Control"
+value = "public, max-age=86400"
 
 [[ports]]
 localPort = 5000
