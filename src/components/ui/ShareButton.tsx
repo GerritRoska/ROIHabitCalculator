@@ -11,18 +11,24 @@ interface ShareButtonProps {
 }
 
 const ShareButton = ({
-  title = 'Habit ROI Calculator',
-  text = 'Calculate how much your habits could be worth if invested!',
-  url = "https://roi-habit-calulator.netlify.app/",
+  title = 'Habit ROI Calculator – Turn Coffee Into $1M',
+  text = 'See how your small habits (like coffee) could grow into real wealth over time.',
+  url = window.location.href,
   className = ''
 }: ShareButtonProps) => {
   const handleShare = async () => {
     try {
-      await navigator.share({
-        title,
-        text,
-        url
-      });
+      if (navigator.share) {
+        await navigator.share({
+          title,
+          text,
+          url
+        });
+      } else {
+        // Fallback for desktop
+        await navigator.clipboard.writeText(url);
+        alert('Link copied to clipboard!');
+      }
     } catch (err) {
       console.log('Share failed:', err);
     }
