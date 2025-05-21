@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { Card, CardContent } from "../ui/card";
 import { Slider } from "@/components/ui/slider";
 import { Label } from "@/components/ui/label";
@@ -205,6 +205,10 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({ className = "" }) => 
     }).format(value);
   };
 
+  const handleRemoveWeakness = useCallback((id: string) => {
+    setWeaknessList(prev => prev.filter(weakness => weakness.id !== id));
+  }, []);
+
   return (
     <Card className={`bg-gradient-to-br from-background to-accent/5 dark:from-background dark:to-accent/10 p-3 sm:p-5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 mx-auto max-w-full border-0 will-change-transform ${className}`}>
       <CardContent className="p-0">
@@ -366,9 +370,7 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({ className = "" }) => 
                                 size="sm"
                                 className="text-xs sm:text-sm px-2 sm:px-3"
                                 onClick={() => {
-                                  setWeaknessList((prev) =>
-                                    prev.filter((_, i) => i !== index)
-                                  );
+                                  handleRemoveWeakness(weakness.id);
                                 }}
                               >
                                 Remove
