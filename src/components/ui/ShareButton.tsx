@@ -13,7 +13,7 @@ interface ShareButtonProps {
 const ShareButton = ({
   title = 'Habit ROI Calculator',
   text = 'Calculate how much your habits could be worth if invested!',
-  url = window.location.href,
+  url = "https://roi-habit-calulator.netlify.app/",
   className = ''
 }: ShareButtonProps) => {
   const handleShare = async () => {
