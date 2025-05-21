@@ -69,25 +69,6 @@ const Home = () => {
           <p className="text-xs text-muted-foreground mt-2">© 2025 Investment Calculator</p>
         </div>
       </div>
-      <div className="absolute top-4 right-4 flex items-center gap-2">
-        <a
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            if (navigator.share) {
-              navigator.share({
-                title: 'Habit ROI Calculator',
-                text: 'Calculate how your daily habits could turn into real wealth over time!',
-                url: window.location.href
-              });
-            }
-          }}
-          className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-blue-700 hover:text-blue-800 hover:bg-blue-50 rounded-lg transition-colors"
-        >
-          <Share2 className="w-4 h-4" />
-          Share with friends!
-        </a>
-      </div>
     </div>
   );
 };
