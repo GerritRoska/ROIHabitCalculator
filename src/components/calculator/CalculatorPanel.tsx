@@ -89,7 +89,7 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({ className = "" }) => 
     if (showMultipleWeaknesses && weaknessList.length > 0) {
       weaknessList.forEach((weakness) => {
         annualWeaknessSavings += getAnnualWeaknessSavings(weakness);
-      });
+            });
     }
 
     const monthlyWeaknessSavings = annualWeaknessSavings / 12;
@@ -209,6 +209,8 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({ className = "" }) => 
     setWeaknessList(prev => prev.filter(weakness => weakness.id !== id));
   }, []);
 
+  const shareUrl = "https://roi-habit-calulator.netlify.app/";
+
   return (
     <Card className={`bg-gradient-to-br from-background to-accent/5 dark:from-background dark:to-accent/10 p-3 sm:p-5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 mx-auto max-w-full border-0 will-change-transform ${className}`}>
       <CardContent className="p-0">
@@ -240,29 +242,6 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({ className = "" }) => 
                   >
                     <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
                   </svg>
-                </a>
-              </div>
-
-              <div className="flex items-center gap-1.5">
-                <span >
-                  Invest with Acorns
-                </span>
-                 <a
-                  href="https://www.acorns.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800 transition-colors inline-flex items-center"
-                  aria-label="Invest with Acorns"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.open(
-                      "https://www.acorns.com/",
-                      "_blank",
-                      "noopener,noreferrer"
-                    );
-                  }}
-                >
-                   <DollarSign className="w-4 h-4" />
                 </a>
               </div>
 
@@ -619,7 +598,7 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({ className = "" }) => 
                       {(() => {
                         // Calculate costs based on frequency
                         const calculatePeriodCost = (data: WeaknessData) => {
-                          const multiplier = 
+                          const multiplier =
                             data.frequency === 'daily' ? 365 :
                             data.frequency === 'weekly' ? 52 : 12;
                           return data.cost * data.timesPerFrequency * multiplier;
@@ -632,8 +611,8 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({ className = "" }) => 
 
                           // Convert to monthly if under $1000/year
                           const useMonthly = totalAnnualCost < 1000;
-                          const displayAmount = useMonthly ? 
-                            totalAnnualCost / 12 : 
+                          const displayAmount = useMonthly ?
+                            totalAnnualCost / 12 :
                             totalAnnualCost;
 
                           return `Your combined habits (~${formatCurrency(displayAmount)}/${useMonthly ? 'month' : 'year'}) could grow to ${formatCurrency(finalAmount)}`;
@@ -646,21 +625,7 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({ className = "" }) => 
                         }
                       })()}
                     </h3>
-                    <p className="text-gray-900">
-                      Acorns helps you invest that amount automatically — and grow it over time.
-                    </p>
-                    <p className="text-sm mt-2">
-                      <span>🎁</span>
-                      <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800">
-                        Includes a $5 bonus to get you started.
-                      </span>
-                    </p>
-                    <Button
-                      className="bg-gradient-to-r from-primary to-accent text-white font-bold px-6 sm:px-8 py-6 sm:py-7 rounded-lg shadow-sm hover:opacity-90 transition-opacity w-full sm:w-auto text-sm sm:text-base whitespace-normal sm:whitespace-nowrap"
-                      onClick={() => window.open("https://www.acorns.com/share/?first_name=Gerrit&shareable_code=QM3PVD3", "_blank")}
-                    >
-                      🌱 Start Investing with Acorns — Get $5 Bonus →
-                    </Button>
+                    
                   </div>
                 </div>
 
