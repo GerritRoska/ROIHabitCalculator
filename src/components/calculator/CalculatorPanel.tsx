@@ -12,7 +12,7 @@ import SummaryCards from "./SummaryCards";
 import CoffeeCalculator, { WeaknessData } from "./CoffeeCalculator";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAcorn } from '@fortawesome/free-solid-svg-icons';
+import { faSeedling } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faAcorn);
 
@@ -262,7 +262,7 @@ const CalculatorPanel: React.FC<CalculatorPanelProps> = ({ className = "" }) => 
                     );
                   }}
                 >
-                   <FontAwesomeIcon icon={faAcorn} className="w-4 h-4" />
+                   <FontAwesomeIcon icon={faSeedling} className="w-4 h-4" />
                 </a>
               </div>
 
