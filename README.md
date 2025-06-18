@@ -116,7 +116,7 @@ If you have ideas, suggestions, or want to collaborate on future behavior-change
 ## 👤 Author
 Gerrit Roska
 
-I love and want to create things that improve, impact and inspire peoples lives
+I love and want to create things that improve, impact and inspire people's lives
 [Connect with me on LinkedIn](https://www.linkedin.com/in/gerritroska/)
 
 ---
