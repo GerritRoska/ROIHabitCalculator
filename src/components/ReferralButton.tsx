@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { GiftIcon } from "lucide-react";
-import { trackAcornsClick } from '@/lib/utils'; // Assuming you'll create this utility
+import { trackAcornsClick } from '@/lib/utils'; // Analytics helper for tracking referral clicks
 
 const ACORNS_REFERRAL_URL = "https://acorns.com/share/?shareable_code=QM3PVD3&first_name=Gerrit";
 
